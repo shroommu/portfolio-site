@@ -1,5 +1,6 @@
 {
   "name": "portfolio-website",
+  "homepage": "http://alexakruckenberg.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
