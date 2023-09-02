@@ -7,6 +7,7 @@ import GithubIcon from "../assets/icons/icons8-github-64.png";
 import InstagramIcon from "../assets/icons/icons8-instagram-64.png";
 import Button from "./basic/Button";
 import { Link } from "./basic/Link";
+import Nav from "./basic/Nav";
 
 const Container = styled.div`
   display: flex;
@@ -30,10 +31,6 @@ const WebsiteName = styled.div`
   font-size: 48px;
 `;
 
-const NavButtonContainer = styled.div`
-  display: flex;
-`;
-
 const SocialsContainer = styled.div`
   display: flex;
   padding: 12px;
@@ -44,8 +41,8 @@ const Leaves = styled.div`
   background-repeat: repeat-x;
   background: radial-gradient(
     ellipse at center,
-    #0a2033 0px,
-    #0a2033 50px,
+    ${colors.darkestBlue} 0px,
+    ${colors.darkestBlue} 50px,
     transparent 51px
   );
   background-size: 100px 100px;
@@ -56,31 +53,14 @@ const Leaves = styled.div`
   z-index: 0;
 `;
 
-export default function Nav() {
+export default function Header() {
   return (
     <Container>
       <NavigationBar>
-        <WebsiteName>Alexa Kruckenberg</WebsiteName>
-        <NavButtonContainer>
-          <Button
-            content="Home"
-            margin="0 8px 0 0"
-            fontSize="24px"
-            fontFamily={"Delicious Handrawn"}
-          />
-          <Button
-            content="Art"
-            margin="0 8px 0 0"
-            fontSize="24px"
-            fontFamily={"Delicious Handrawn"}
-          />
-          <Button
-            content="Code"
-            margin="0 8px 0 0"
-            fontSize="24px"
-            fontFamily={"Delicious Handrawn"}
-          />
-        </NavButtonContainer>
+        <Link href=".">
+          <WebsiteName>Alexa Kruckenberg</WebsiteName>
+        </Link>
+        <Nav />
         <SocialsContainer>
           <Button
             content="Contact"

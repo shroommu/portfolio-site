@@ -5,6 +5,7 @@ const Container = styled.div`
   display: flex;
   min-height: ${footerHeight}px;
   background: ${colors.darkestBlue};
+  z-index: 1;
 `;
 
 export default function Footer() {

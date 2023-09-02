@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { colors, footerHeight, headerHeight } from "./constants";
 import { Background } from "./Background";
+import Nav from "./basic/Nav";
 
 const Container = styled.div`
   position: relative;

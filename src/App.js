@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import { colors } from "./components/constants";
 
-import Nav from "./components/Nav";
+import Header from "./components/Header";
 import Content from "./components/Content";
 import Footer from "./components/Footer";
 
@@ -19,7 +19,7 @@ const Container = styled.div`
 export default function App() {
   return (
     <Container>
-      <Nav />
+      <Header />
       <Content />
       <Footer />
     </Container>
