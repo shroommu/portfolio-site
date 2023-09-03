@@ -8,10 +8,11 @@ export const treeStyles = ({
   bottomPos,
   flipX,
   maxHeight,
+  maxWidth,
 }) => {
   return css`
-    max-height: ${maxHeight || "600px"};
-    max-width: 600px;
+    max-height: ${maxHeight};
+    max-width: ${maxWidth};
     position: absolute;
     flex: 1;
     z-index: ${zIndex};

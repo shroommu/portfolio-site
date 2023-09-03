@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import { useEffect, useState, useRef } from "react";
+import styled, { css } from "styled-components";
 
 import { colors } from "./constants";
 
@@ -67,21 +68,38 @@ const FoxTreeContainer = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  right: 15%;
   bottom: 20%;
   width: 100%;
   height: 100%;
+  max-height: 120%;
 `;
 
 const FoxArt = styled(fox)`
+  transform: translate(
+    calc(calc(${(p) => p.offsetX}px - 350px) / 5),
+    calc(${(p) => p.offsetY}px - 200px)
+  );
   z-index: 2;
-  position: absolute;
-  left: 20%;
+  position: relative;
   bottom: 0;
   max-height: 150px;
 `;
 
 export function Background() {
+  const [foxOffset, setFoxOffset] = useState([0, 0]);
+
+  const foxTreeContainerRef = useRef(null);
+
+  useEffect(() => {
+    window.addEventListener("resize", updateSize);
+  }, []);
+
+  const updateSize = () => {
+    const { right, bottom } =
+      foxTreeContainerRef.current.getBoundingClientRect();
+    setFoxOffset([right, bottom]);
+  };
+
   return (
     <BackgroundContainer testId="background-container">
       <GroundContainer testId="ground-container">
@@ -93,26 +111,35 @@ export function Background() {
           fillColor={colors.closestTree}
           zIndex={3}
           preserveAspectRatio="none"
-          rightPos="40%"
+          rightPos="60%"
           bottomPos="15%"
+          maxHeight="125%"
+          maxWidth="65%"
           testId="closest-tree-left"
         />
         <FoxTreeContainer testId="fox-tree-container">
           <Tree3
             fillColor={colors.middleTree}
             zIndex={2}
-            maxHeight="525px"
+            maxHeight="100%"
+            maxWidth="65%"
             preserveAspectRatio="none"
             testId="middle-tree-left"
+            ref={foxTreeContainerRef}
           />
-          <FoxArt testId="fox-art" />
+          <FoxArt
+            testId="fox-art"
+            offsetX={foxOffset[0]}
+            offsetY={foxOffset[1]}
+          />
         </FoxTreeContainer>
         <Tree1
           fillColor={colors.furthestTree}
           zIndex={1}
-          maxHeight="500px"
+          maxHeight="90%"
+          maxWidth="65%"
           bottomPos="30%"
-          rightPos="-10%"
+          rightPos="0%"
           preserveAspectRatio="none"
           testId="furthest-tree-left"
         />
@@ -123,7 +150,9 @@ export function Background() {
           zIndex={3}
           flipX={true}
           bottomPos="15%"
-          rightPos="-75%"
+          rightPos="-40%"
+          maxHeight="125%"
+          maxWidth="80%"
           preserveAspectRatio="none"
           testId="tree-closest-right"
         />
@@ -131,9 +160,10 @@ export function Background() {
           fillColor={colors.middleTree}
           zIndex={2}
           flipX={true}
-          maxHeight="575px"
+          maxHeight="100%"
+          maxWidth="80%"
           bottomPos="20%"
-          rightPos="-30%"
+          rightPos="-10%"
           preserveAspectRatio="none"
           testId="tree-middle-right"
         />
@@ -141,9 +171,10 @@ export function Background() {
           fillColor={colors.furthestTree}
           zIndex={1}
           flipX={true}
-          maxHeight="550px"
+          maxHeight="90%"
+          maxWidth="80%"
           bottomPos="30%"
-          rightPos="0%"
+          rightPos="10%"
           preserveAspectRatio="none"
           testId="tree-furthest-right"
         />
