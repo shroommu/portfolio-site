@@ -14,4 +14,3 @@ export const colors = {
 };
 
 export const footerHeight = 200;
-export const headerHeight = 150;

@@ -1,14 +1,15 @@
 import { useEffect, useState, useRef } from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
-import { colors } from "./constants";
+import { colors } from "../constants";
 
-import { Tree1, Tree2, Tree3 } from "../assets";
-import { ReactComponent as fox } from "../assets/svg/fox.svg";
+import { Tree1, Tree2, Tree3 } from "../../assets";
+import { ReactComponent as fox } from "../../assets/svg/fox.svg";
 
 const BackgroundContainer = styled.div`
   display: flex;
-  height: 100%;
+  flex: 1;
+  height: calc(100% + 50px);
   width: 100%;
   justify-content: space-between;
   margin-top: -50px;
@@ -71,7 +72,6 @@ const FoxTreeContainer = styled.div`
   bottom: 20%;
   width: 100%;
   height: 100%;
-  max-height: 120%;
 `;
 
 const FoxArt = styled(fox)`
@@ -85,18 +85,18 @@ const FoxArt = styled(fox)`
   max-height: 150px;
 `;
 
-export function Background() {
-  const [foxOffset, setFoxOffset] = useState([0, 0]);
+export default function Background() {
+  const [foxOffset, setFoxOffset] = useState([350 / 5, 0]);
 
-  const foxTreeContainerRef = useRef(null);
+  const foxTreeRef = useRef(null);
 
   useEffect(() => {
     window.addEventListener("resize", updateSize);
+    updateSize();
   }, []);
 
   const updateSize = () => {
-    const { right, bottom } =
-      foxTreeContainerRef.current.getBoundingClientRect();
+    const { right, bottom } = foxTreeRef.current.getBoundingClientRect();
     setFoxOffset([right, bottom]);
   };
 
@@ -125,7 +125,7 @@ export function Background() {
             maxWidth="65%"
             preserveAspectRatio="none"
             testId="middle-tree-left"
-            ref={foxTreeContainerRef}
+            ref={foxTreeRef}
           />
           <FoxArt
             testId="fox-art"

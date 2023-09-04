@@ -3,6 +3,11 @@
     src: local('Delicious Handrawn'), url(./assets/fonts/Delicious_Handrawn/DeliciousHandrawn-Regular.ttf) format('truetype');
 }
 
+@font-face {
+    font-family: "Bitter";
+    src: local('Bitter'), url(./assets/fonts/Bitter/Bitter-VariableFont_wght.ttf) format('truetype');
+}
+
 html, body {
     padding: 0;
     margin: 0;

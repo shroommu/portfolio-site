@@ -1,32 +1,20 @@
 import styled from "styled-components";
-import { colors, footerHeight, headerHeight } from "./constants";
-import { Background } from "./Background";
-import Nav from "./basic/Nav";
+
+import LandingSection from "./landing/LandingSection";
+import Section from "./basic/Section";
 
 const Container = styled.div`
-  position: relative;
-`;
-
-const CardContainer = styled.div`
   display: flex;
-  min-height: calc(100vh - ${footerHeight + headerHeight}px);
-  padding: 100px 15% 100px 30%;
-`;
-
-const Card = styled.div`
-  flex: 1;
-  background: ${colors.white};
-  border-radius: 30px;
-  z-index: 4;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
 `;
 
 export default function Content() {
   return (
     <Container>
-      <Background />
-      <CardContainer>
-        <Card></Card>
-      </CardContainer>
+      <LandingSection />
+      <Section testId="section-1" />
     </Container>
   );
 }
