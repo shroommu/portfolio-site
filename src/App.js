@@ -18,7 +18,7 @@ const Container = styled.div`
 
 export default function App() {
   return (
-    <Container>
+    <Container test-id="app-container">
       <Header />
       <Content />
       <Footer />

@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
 
+import { device } from "../../constants";
 import { colors } from "../constants";
 
 import { Tree1, Tree2, Tree3 } from "../../assets";
@@ -15,6 +16,10 @@ const BackgroundContainer = styled.div`
   margin-top: -50px;
   position: absolute;
   overflow-x: clip;
+
+  @media ${device.tablet} {
+    display: none;
+  }
 `;
 
 const GroundContainer = styled.div`

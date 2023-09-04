@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+import { device } from "../../constants";
 import { colors } from "../constants";
 
 import pfp from "../../assets/images/pfp.jpg";
@@ -34,12 +35,16 @@ const Paragraph = styled.p`
 const ProfilePicture = styled.img`
   clip-path: circle(at center);
   height: 300px;
+
+  @media ${device.mobileL} {
+    display: none;
+  }
 `;
 
 export default function Greeting() {
   return (
-    <Container>
-      <TextContainer>
+    <Container test-id="greeting-container">
+      <TextContainer test-id="greeting-text-container">
         <Heading>Hi, I'm Alexa!</Heading>
         <SubHeading>Software Developer, Artist, Pokemon Enthusiast</SubHeading>
         <Paragraph>
@@ -54,7 +59,7 @@ export default function Greeting() {
         </Paragraph>
         <Paragraph>Thanks for visiting my site!</Paragraph>
       </TextContainer>
-      <ProfilePicture src={pfp} />
+      <ProfilePicture src={pfp} test-id="profile-picture" />
     </Container>
   );
 }

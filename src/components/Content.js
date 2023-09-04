@@ -12,7 +12,7 @@ const Container = styled.div`
 
 export default function Content() {
   return (
-    <Container>
+    <Container test-id="content-container">
       <LandingSection />
       <Section testId="section-1" />
     </Container>
