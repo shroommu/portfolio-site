@@ -16,10 +16,6 @@ const BackgroundContainer = styled.div`
   margin-top: -50px;
   position: absolute;
   overflow-x: clip;
-
-  @media ${device.tablet} {
-    display: none;
-  }
 `;
 
 const GroundContainer = styled.div`
@@ -55,54 +51,84 @@ const SkyFill = styled.div`
 
 const TreesLeftContainer = styled.div`
   display: flex;
-  top: 100px;
   width: 45%;
-  height: 100%;
+  height: calc(100% + 100px);
   position: relative;
+
+  @media ${device.tablet} {
+    display: none;
+  }
 `;
 
 const TreesRightContainer = styled.div`
   display: flex;
   flex-direction: row-reverse;
-  top: 100px;
   width: 30%;
-  height: 100%;
+  height: calc(100% + 100px);
   position: relative;
+
+  @media ${device.tablet} {
+    display: none;
+  }
 `;
 
-const FoxTreeContainer = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  bottom: 20%;
-  width: 100%;
-  height: 100%;
+const MobileTreeContainer = styled.div`
+  display: none;
+
+  @media ${device.tablet} {
+    display: flex;
+    width: 100%;
+    height: calc(100% + 100px);
+    position: relative;
+  }
+
+  @media ${device.mobile} {
+    display: none;
+  }
 `;
 
 const FoxArt = styled(fox)`
   transform: translate(
-    calc(calc(${(p) => p.offsetX}px - 350px) / 5),
-    calc(${(p) => p.offsetY}px - 200px)
+    calc(calc(${(p) => p.offsetX}px - 250px) / 5),
+    calc(${(p) => p.offsetY}px - 250px)
   );
   z-index: 2;
-  position: relative;
-  bottom: 0;
+  position: absolute;
+  max-height: 150px;
+`;
+
+const MobileFoxArt = styled(fox)`
+  transform: translate(
+    calc(calc(${(p) => p.offsetX}px - 400px) / 5),
+    calc(${(p) => p.offsetY}px + 75%)
+  );
+  z-index: 4;
+  position: absolute;
   max-height: 150px;
 `;
 
 export default function Background() {
-  const [foxOffset, setFoxOffset] = useState([350 / 5, 0]);
+  const [foxOffset, setFoxOffset] = useState([0, 0]);
+  const [mobileFoxOffset, setMobileFoxOffset] = useState([0, 0]);
 
   const foxTreeRef = useRef(null);
+  const mobileFoxTreeRef = useRef(null);
 
   useEffect(() => {
     window.addEventListener("resize", updateSize);
+    window.addEventListener("resize", updateSizeMobile);
     updateSize();
+    updateSizeMobile();
   }, []);
 
   const updateSize = () => {
     const { right, bottom } = foxTreeRef.current.getBoundingClientRect();
     setFoxOffset([right, bottom]);
+  };
+
+  const updateSizeMobile = () => {
+    const { right, bottom } = mobileFoxTreeRef.current.getBoundingClientRect();
+    setMobileFoxOffset([right, bottom]);
   };
 
   return (
@@ -118,30 +144,29 @@ export default function Background() {
           preserveAspectRatio="none"
           rightPos="60%"
           bottomPos="15%"
-          maxHeight="125%"
+          height="90%"
           maxWidth="65%"
           testId="closest-tree-left"
         />
-        <FoxTreeContainer testId="fox-tree-container">
-          <Tree3
-            fillColor={colors.middleTree}
-            zIndex={2}
-            maxHeight="100%"
-            maxWidth="65%"
-            preserveAspectRatio="none"
-            testId="middle-tree-left"
-            ref={foxTreeRef}
-          />
-          <FoxArt
-            testId="fox-art"
-            offsetX={foxOffset[0]}
-            offsetY={foxOffset[1]}
-          />
-        </FoxTreeContainer>
+        <Tree3
+          fillColor={colors.middleTree}
+          zIndex={2}
+          height="85%"
+          maxWidth="65%"
+          bottomPos="20%"
+          preserveAspectRatio="none"
+          testId="middle-tree-left"
+          ref={foxTreeRef}
+        />
+        <FoxArt
+          test-id="fox-art"
+          offsetX={foxOffset[0]}
+          offsetY={foxOffset[1]}
+        />
         <Tree1
           fillColor={colors.furthestTree}
           zIndex={1}
-          maxHeight="90%"
+          height="80%"
           maxWidth="65%"
           bottomPos="30%"
           rightPos="0%"
@@ -156,7 +181,7 @@ export default function Background() {
           flipX={true}
           bottomPos="15%"
           rightPos="-40%"
-          maxHeight="125%"
+          height="90%"
           maxWidth="80%"
           preserveAspectRatio="none"
           testId="tree-closest-right"
@@ -165,7 +190,7 @@ export default function Background() {
           fillColor={colors.middleTree}
           zIndex={2}
           flipX={true}
-          maxHeight="100%"
+          height="85%"
           maxWidth="80%"
           bottomPos="20%"
           rightPos="-10%"
@@ -176,7 +201,7 @@ export default function Background() {
           fillColor={colors.furthestTree}
           zIndex={1}
           flipX={true}
-          maxHeight="90%"
+          height="80%"
           maxWidth="80%"
           bottomPos="30%"
           rightPos="10%"
@@ -184,6 +209,44 @@ export default function Background() {
           testId="tree-furthest-right"
         />
       </TreesRightContainer>
+      <MobileTreeContainer test-id="mobile-tree-container">
+        <MobileFoxArt
+          test-id="mobile-fox-art"
+          offsetX={mobileFoxOffset[0]}
+          offsetY={mobileFoxOffset[1]}
+        />
+        <Tree2
+          fillColor={colors.closestTree}
+          zIndex={3}
+          preserveAspectRatio="none"
+          rightPos="65%"
+          bottomPos="5%"
+          height="100%"
+          maxWidth="45%"
+          testId="closest-tree-mobile"
+          ref={mobileFoxTreeRef}
+        />
+        <Tree3
+          fillColor={colors.middleTree}
+          zIndex={2}
+          height="90%"
+          maxWidth="45%"
+          rightPos="30%"
+          bottomPos="10%"
+          preserveAspectRatio="none"
+          testId="middle-tree-mobile"
+        />
+        <Tree1
+          fillColor={colors.furthestTree}
+          zIndex={1}
+          height="85%"
+          maxWidth="45%"
+          bottomPos="15%"
+          rightPos="-10%"
+          preserveAspectRatio="none"
+          testId="furthes-tree-mobile"
+        />
+      </MobileTreeContainer>
     </BackgroundContainer>
   );
 }

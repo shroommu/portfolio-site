@@ -8,6 +8,7 @@ import InstagramIcon from "../assets/icons/icons8-instagram-64.png";
 import Button from "./basic/Button";
 import { Link } from "./basic/Link";
 import Nav from "./basic/Nav";
+import { device } from "../constants";
 
 const Container = styled.div`
   display: flex;
@@ -23,17 +24,31 @@ const NavigationBar = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 0 36px;
+
+  @media ${device.tablet} {
+    justify-content: center;
+    height: 50px;
+    padding: 12px;
+  }
 `;
 
 const WebsiteName = styled.div`
   font-family: Delicious Handrawn;
   color: ${colors.white};
   font-size: 48px;
+
+  @media ${device.mobile} {
+    font-size: 36px;
+  }
 `;
 
 const SocialsContainer = styled.div`
   display: flex;
   padding: 12px;
+
+  @media ${device.tablet} {
+    display: none;
+  }
 `;
 
 const Leaves = styled.div`
@@ -46,17 +61,29 @@ const Leaves = styled.div`
     transparent 51px
   );
   background-size: 100px 100px;
-  background-repeat: repeat-x;
   background-position: 5px center;
   width: 100vw;
   height: 100px;
   z-index: 0;
+
+  @media ${device.mobile} {
+    margin-top: -25px;
+    background: radial-gradient(
+      ellipse at center,
+      ${colors.darkestBlue} 0px,
+      ${colors.darkestBlue} 25px,
+      transparent 26px
+    );
+    background-size: 50px 50px;
+    height: 50px;
+  }
 `;
 
 export default function Header() {
   return (
     <Container>
       <NavigationBar>
+        {/* burger menu */}
         <Link href=".">
           <WebsiteName>Alexa Kruckenberg</WebsiteName>
         </Link>

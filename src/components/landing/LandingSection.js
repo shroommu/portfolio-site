@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Background from "./Background";
 import Greeting from "./Greeting";
 import Card from "../basic/Card";
+import { device } from "../../constants";
 
 const Container = styled.div`
   display: flex;
@@ -12,6 +13,10 @@ const Container = styled.div`
 const CardContainer = styled.div`
   display: flex;
   padding: 10% 15% 10% 30%;
+
+  @media ${device.tablet} {
+    padding: 20% 10%;
+  }
 `;
 
 export default function LandingSection() {

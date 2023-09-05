@@ -1,9 +1,14 @@
 import styled from "styled-components";
 import Button from "./Button";
+import { device } from "../../constants";
 
 const NavButtonContainer = styled.div`
   display: flex;
   justify-content: center;
+
+  @media ${device.tablet} {
+    display: none;
+  }
 `;
 
 export default function Nav() {
