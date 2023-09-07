@@ -100,7 +100,7 @@ const FoxArt = styled(fox)`
 const MobileFoxArt = styled(fox)`
   transform: translate(
     calc(calc(${(p) => p.offsetX}px - 400px) / 5),
-    calc(${(p) => p.offsetY}px + 75%)
+    calc(${(p) => p.offsetY}px + 80%)
   );
   z-index: 4;
   position: absolute;

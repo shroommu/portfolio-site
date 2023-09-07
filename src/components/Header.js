@@ -6,7 +6,7 @@ import LinkedInIcon from "../assets/icons/icons8-linkedin-64.png";
 import GithubIcon from "../assets/icons/icons8-github-64.png";
 import InstagramIcon from "../assets/icons/icons8-instagram-64.png";
 import Button from "./basic/Button";
-import { Link } from "./basic/Link";
+import Link from "./basic/Link";
 import Nav from "./basic/Nav";
 import { device } from "../constants";
 

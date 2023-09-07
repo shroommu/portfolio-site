@@ -2,10 +2,12 @@ import styled from "styled-components";
 
 const Container = styled.div``;
 
-export function Link({ href, children }) {
+export default function Link({ href, children }) {
   return (
     <Container>
-      <a href={href}>{children}</a>
+      <a href={href} tabIndex={0} target="_blank">
+        {children}
+      </a>
     </Container>
   );
 }
