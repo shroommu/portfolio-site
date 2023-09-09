@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/bash
 
 curl -I -X POST https://cpanel-box5127.bluehost.com/cpsess0001371716/execute/VersionControl/update
 curl -I -X POST https://cpanel-box5127.bluehost.com/cpsess0001371716/execute/VersionControlDeployment/create
