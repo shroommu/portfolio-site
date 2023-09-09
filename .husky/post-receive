@@ -1,6 +1,0 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
-curl -I -X POST https://cpanel-box5127.bluehost.com/cpsess0001371716/execute/VersionControl/update
-curl -I -X POST https://cpanel-box5127.bluehost.com/cpsess0001371716/execute/VersionControlDeployment/create
-echo 'did the post-push'
