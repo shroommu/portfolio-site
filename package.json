@@ -27,7 +27,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "npm run build \n git add ./build",
-      "post-push": "curl -I -X POST https://cpanel-box5127.bluehost.com/cpsess0001371716/execute/VersionControl/update \n curl -I -X POST https://cpanel-box5127.bluehost.com/cpsess0001371716/execute/VersionControlDeployment/create"
+      "post-push": "curl -I -X POST https://cpanel-box5127.bluehost.com/cpsess0001371716/execute/VersionControl/update \n curl -I -X POST https://cpanel-box5127.bluehost.com/cpsess0001371716/execute/VersionControlDeployment/create \n echo 'did the post-push'"
     }
   },
   "eslintConfig": {
