@@ -26,7 +26,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run build"
+      "pre-commit": "npm run build \n git add ./build",
+      "post-push": "curl -I -X POST https://cpanel-box5127.bluehost.com/cpsess0001371716/execute/VersionControl/update \n curl -I -X POST https://cpanel-box5127.bluehost.com/cpsess0001371716/execute/VersionControlDeployment/create"
     }
   },
   "eslintConfig": {
@@ -52,7 +53,7 @@
     "@babel/preset-env": "^7.22.15",
     "babel-loader": "^9.1.3",
     "cross-env": "^7.0.3",
-    "husky": "^8.0.3",
+    "husky": "^4.0",
     "postcss": "^8.4.29",
     "postcss-custom-media": "^10.0.0",
     "postcss-loader": "^7.3.3",
