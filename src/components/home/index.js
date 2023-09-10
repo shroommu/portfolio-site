@@ -1,14 +1,16 @@
-import Header from "../shared/Header";
-import Footer from "../shared/Footer";
-import { PageContainer } from "../shared";
 import LandingSection from "./LandingSection";
 import Section from "../basic/Section";
+import Gallery from "../basic/Gallery";
+import Featured from "./featured";
 
 export default function Home() {
   return (
     <>
       <LandingSection />
-      <Section testId="section-1" />
+      <Featured />
+      <Section testId="section-1">
+        <Gallery />
+      </Section>
     </>
   );
 }

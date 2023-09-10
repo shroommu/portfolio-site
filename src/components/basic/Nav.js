@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import Button from "./Button";
+import Button, { themes } from "./Button";
 import { device } from "../../constants";
 
 const NavButtonContainer = styled.div`
@@ -13,40 +13,61 @@ const NavButtonContainer = styled.div`
   }
 `;
 
-export default function Nav() {
+const locations = { INDEX: "/", ART: "/art/", BLOG: "/blog/", CODE: "/code/" };
+
+export default function Nav({ location }) {
   return (
     <NavButtonContainer>
-      <Link to="/">
+      <Link to={locations.INDEX}>
         <Button
           content="Home"
           margin="0 8px 0 0"
           fontSize="24px"
           fontFamily={"Delicious Handrawn"}
+          theme={
+            location.pathname === locations.INDEX
+              ? themes.secondary
+              : themes.default
+          }
         />
       </Link>
-      <Link to={`art/`}>
+      <Link to={locations.ART}>
         <Button
           content="Art"
           margin="0 8px 0 0"
           fontSize="24px"
           fontFamily={"Delicious Handrawn"}
-          //onClick={artRoute}
+          theme={
+            location.pathname === locations.ART
+              ? themes.secondary
+              : themes.default
+          }
         />
       </Link>
-      <Link to={`code/`}>
+      <Link to={locations.CODE}>
         <Button
           content="Code"
           margin="0 8px 0 0"
           fontSize="24px"
           fontFamily={"Delicious Handrawn"}
+          theme={
+            location.pathname === locations.CODE
+              ? themes.secondary
+              : themes.default
+          }
         />
       </Link>
-      <Link to={`blog/`}>
+      <Link to={locations.BLOG}>
         <Button
           content="Blog"
           margin="0 8px 0 0"
           fontSize="24px"
           fontFamily={"Delicious Handrawn"}
+          theme={
+            location.pathname === locations.BLOG
+              ? themes.secondary
+              : themes.default
+          }
         />
       </Link>
     </NavButtonContainer>

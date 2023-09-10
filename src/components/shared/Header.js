@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import styled from "styled-components";
 import { colors } from "../constants";
 import { SocialIcon } from "../../assets";
@@ -5,8 +7,8 @@ import { SocialIcon } from "../../assets";
 import LinkedInIcon from "../../assets/icons/icons8-linkedin-64.png";
 import GithubIcon from "../../assets/icons/icons8-github-64.png";
 import InstagramIcon from "../../assets/icons/icons8-instagram-64.png";
-import Button from "../basic/Button";
-import Link from "../basic/Link";
+import Button, { themes } from "../basic/Button";
+import ExternalLink from "../basic/Link";
 import Nav from "../basic/Nav";
 import { device } from "../../constants";
 
@@ -79,7 +81,7 @@ const Leaves = styled.div`
   }
 `;
 
-export default function Header() {
+export default function Header({ location }) {
   return (
     <Container>
       <NavigationBar>
@@ -87,27 +89,26 @@ export default function Header() {
         <Link href=".">
           <WebsiteName>Alexa Kruckenberg</WebsiteName>
         </Link>
-        <Nav />
+        <Nav location={location} />
         <SocialsContainer>
-          <Button
-            content="Contact"
-            margin="0 16px 0 0"
-            fontSize="24px"
-            fontFamily={"Delicious Handrawn"}
-            fontColor={colors.white}
-            background={colors.orange}
-            hover={colors.darkerOrange}
-            active={colors.darkestOrange}
-          />
-          <Link href="http://instagram.com/shroommu">
+          <Link to={"/contact"}>
+            <Button
+              content="Contact"
+              margin="0 16px 0 0"
+              fontSize="24px"
+              fontFamily={"Delicious Handrawn"}
+              theme={themes.tertiary}
+            />
+          </Link>
+          <ExternalLink href="http://instagram.com/shroommu">
             <SocialIcon src={InstagramIcon} height="48px" margin="0 8px 0 0" />
-          </Link>
-          <Link href="http://github.com/shroommu">
+          </ExternalLink>
+          <ExternalLink href="http://github.com/shroommu">
             <SocialIcon src={GithubIcon} height="48px" margin="0 8px 0 0" />
-          </Link>
-          <Link href="http://linkedin.com/in/alexa-kruckenberg">
+          </ExternalLink>
+          <ExternalLink href="http://linkedin.com/in/alexa-kruckenberg">
             <SocialIcon src={LinkedInIcon} height="48px" margin="0" />
-          </Link>
+          </ExternalLink>
         </SocialsContainer>
       </NavigationBar>
       <Leaves />

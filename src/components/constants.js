@@ -5,12 +5,32 @@ export const colors = {
   closestTree: "#00335c",
   middleTree: "#004e8b",
   furthestTree: "#1263a3",
+
   white: "#ffffff",
   orange: "#de752d",
   darkerOrange: "#c86929",
   darkestOrange: "#b25e24",
-  defaultButtonHover: "#d0e0ed",
-  defaultButtonActive: "#a0c1da",
+
+  defaultButton: {
+    background: "#ffffff",
+    hover: "#d0e0ed",
+    active: "#a0c1da",
+    fontColor: "#0a2033",
+  },
+
+  secondaryButton: {
+    background: "#5a96c4",
+    hover: "#438bc4",
+    active: "#2369a1",
+    fontColor: "#ffffff",
+  },
+
+  tertiaryButton: {
+    background: "#de752d",
+    hover: "#c86929",
+    active: "#b25e24",
+    fontColor: "#ffffff",
+  },
 };
 
 export const footerHeight = 200;

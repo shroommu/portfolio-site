@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { RouterProvider, createBrowserRouter, Outlet } from "react-router-dom";
+import { Routes, Route, BrowserRouter, useLocation } from "react-router-dom";
 
 import Art from "./components/art/index.js";
 import Blog from "./components/blog/index.js";
@@ -11,44 +11,31 @@ import Footer from "./components/shared/Footer.js";
 
 import "./global.css";
 import { PageContainer } from "./components/shared/index.js";
-
-const commonLayout = () => {
-  return (
-    <PageContainer>
-      <Header />
-      <Outlet />
-      <Footer />
-    </PageContainer>
-  );
-};
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: commonLayout(),
-    children: [
-      { path: "/", element: <Home /> },
-      {
-        path: "blog/",
-        element: <Blog />,
-      },
-      {
-        path: "art/",
-        element: <Art />,
-      },
-      {
-        path: "code/",
-        element: <Code />,
-      },
-    ],
-  },
-]);
+import Contact from "./components/contact/index.js";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <RouterProvider router={router}>
-      <Home />
-    </RouterProvider>
-  </React.StrictMode>
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
 );
+
+function App() {
+  const location = useLocation();
+
+  return (
+    <React.StrictMode>
+      <PageContainer>
+        <Header location={location} />
+        <Routes>
+          <Route path="/" index element={<Home />} />
+          <Route path="/code" element={<Code />} />
+          <Route path="/art" element={<Art />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+        <Footer />
+      </PageContainer>
+    </React.StrictMode>
+  );
+}
