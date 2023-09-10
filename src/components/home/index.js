@@ -1,6 +1,7 @@
 import LandingSection from "./LandingSection";
 import Section from "../basic/Section";
 import Gallery from "../basic/Gallery";
+import Card from "../basic/Card";
 import Featured from "./featured";
 
 export default function Home() {
@@ -8,8 +9,10 @@ export default function Home() {
     <>
       <LandingSection />
       <Featured />
-      <Section testId="section-1">
-        <Gallery />
+      <Section testId="gallery-section">
+        <Card>
+          <Gallery />
+        </Card>
       </Section>
     </>
   );

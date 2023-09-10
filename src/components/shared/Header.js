@@ -64,7 +64,7 @@ const Leaves = styled.div`
   );
   background-size: 100px 100px;
   background-position: 5px center;
-  width: 100vw;
+  width: 100%;
   height: 100px;
   z-index: 0;
 
@@ -86,7 +86,7 @@ export default function Header({ location }) {
     <Container>
       <NavigationBar>
         {/* burger menu */}
-        <Link href=".">
+        <Link to="/">
           <WebsiteName>Alexa Kruckenberg</WebsiteName>
         </Link>
         <Nav location={location} />

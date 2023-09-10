@@ -1,7 +1,10 @@
-import styled from "styled-components";
+import Section from "../basic/Section";
+import Card from "../basic/Card";
 
-const Container = styled.div``;
-
-export default function Contact({ testId, children }) {
-  return <Container testId={testId}>{children}</Container>;
+export default function Contact({}) {
+  return (
+    <Section testId="contact-section">
+      <Card></Card>
+    </Section>
+  );
 }

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Background from "./Background";
 import Greeting from "./Greeting";
 import Card from "../basic/Card";
 import { device } from "../../constants";
@@ -22,7 +21,6 @@ const CardContainer = styled.div`
 export default function LandingSection() {
   return (
     <Container test-id="landing-section-container">
-      <Background />
       <CardContainer>
         <Card zIndex={4}>
           <Greeting />

@@ -10,10 +10,10 @@ import { ReactComponent as fox } from "../../assets/svg/fox.svg";
 const BackgroundContainer = styled.div`
   display: flex;
   flex: 1;
-  height: calc(100% + 50px);
+  height: 90vh;
+  top: 50px;
   width: 100%;
   justify-content: space-between;
-  margin-top: -50px;
   position: absolute;
   overflow-x: clip;
 `;
@@ -244,7 +244,7 @@ export default function Background() {
           bottomPos="15%"
           rightPos="-10%"
           preserveAspectRatio="none"
-          testId="furthes-tree-mobile"
+          testId="furthest-tree-mobile"
         />
       </MobileTreeContainer>
     </BackgroundContainer>
