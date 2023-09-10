@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <LandingSection />
       <Featured />
-      <Section testId="gallery-section">
+      <Section testId="gallery-section" margin="0 0 24px 0">
         <Card>
           <Gallery />
         </Card>

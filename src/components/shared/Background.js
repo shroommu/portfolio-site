@@ -52,7 +52,7 @@ const SkyFill = styled.div`
 const TreesLeftContainer = styled.div`
   display: flex;
   width: 45%;
-  height: calc(100% + 100px);
+  height: 100%;
   position: relative;
 
   @media ${device.tablet} {
@@ -64,7 +64,7 @@ const TreesRightContainer = styled.div`
   display: flex;
   flex-direction: row-reverse;
   width: 30%;
-  height: calc(100% + 100px);
+  height: 100%;
   position: relative;
 
   @media ${device.tablet} {
@@ -90,7 +90,7 @@ const MobileTreeContainer = styled.div`
 const FoxArt = styled(fox)`
   transform: translate(
     calc(calc(${(p) => p.offsetX}px - 250px) / 5),
-    calc(${(p) => p.offsetY}px - 250px)
+    calc(${(p) => p.offsetY}px - ${(p) => p.offsetY / 4.5}px)
   );
   z-index: 2;
   position: absolute;
@@ -143,17 +143,17 @@ export default function Background() {
           zIndex={3}
           preserveAspectRatio="none"
           rightPos="60%"
-          bottomPos="15%"
-          height="90%"
+          bottomPos="0%"
+          height="100%"
           maxWidth="65%"
           testId="closest-tree-left"
         />
         <Tree3
           fillColor={colors.middleTree}
           zIndex={2}
-          height="85%"
+          height="95%"
           maxWidth="65%"
-          bottomPos="20%"
+          bottomPos="5%"
           preserveAspectRatio="none"
           testId="middle-tree-left"
           ref={foxTreeRef}
@@ -166,9 +166,9 @@ export default function Background() {
         <Tree1
           fillColor={colors.furthestTree}
           zIndex={1}
-          height="80%"
+          height="90%"
           maxWidth="65%"
-          bottomPos="30%"
+          bottomPos="10%"
           rightPos="0%"
           preserveAspectRatio="none"
           testId="furthest-tree-left"
@@ -179,9 +179,9 @@ export default function Background() {
           fillColor={colors.closestTree}
           zIndex={3}
           flipX={true}
-          bottomPos="15%"
+          bottomPos="0%"
           rightPos="-40%"
-          height="90%"
+          height="100%"
           maxWidth="80%"
           preserveAspectRatio="none"
           testId="tree-closest-right"
@@ -190,9 +190,9 @@ export default function Background() {
           fillColor={colors.middleTree}
           zIndex={2}
           flipX={true}
-          height="85%"
+          height="95%"
           maxWidth="80%"
-          bottomPos="20%"
+          bottomPos="5%"
           rightPos="-10%"
           preserveAspectRatio="none"
           testId="tree-middle-right"
@@ -201,9 +201,9 @@ export default function Background() {
           fillColor={colors.furthestTree}
           zIndex={1}
           flipX={true}
-          height="80%"
+          height="90%"
           maxWidth="80%"
-          bottomPos="30%"
+          bottomPos="10%"
           rightPos="10%"
           preserveAspectRatio="none"
           testId="tree-furthest-right"

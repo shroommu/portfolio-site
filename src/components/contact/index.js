@@ -4,7 +4,7 @@ import Card from "../basic/Card";
 export default function Contact({}) {
   return (
     <Section testId="contact-section">
-      <Card></Card>
+      <Card zIndex={5}></Card>
     </Section>
   );
 }

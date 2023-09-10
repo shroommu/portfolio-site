@@ -4,7 +4,7 @@ import Card from "../basic/Card";
 export default function Code({}) {
   return (
     <Section testId="code-section">
-      <Card></Card>
+      <Card zIndex={5}></Card>
     </Section>
   );
 }
