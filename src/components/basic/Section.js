@@ -6,14 +6,9 @@ const Container = styled.div`
   flex: 1;
   padding: ${(p) => p.padding};
   margin: ${(p) => p.margin};
-
-  & :last-child {
-    margin-bottom: 24px;
-  }
 `;
 
 export default function Section({ testId, children, margin, padding }) {
-  console.log(padding);
   return (
     <Container test-id={testId} margin={margin} padding={padding}>
       {children}
@@ -21,4 +16,4 @@ export default function Section({ testId, children, margin, padding }) {
   );
 }
 
-Section.defaultProps = { padding: "10% 15% 0%" };
+Section.defaultProps = { padding: "10% 15% 0%", margin: "0 0 24px 0" };

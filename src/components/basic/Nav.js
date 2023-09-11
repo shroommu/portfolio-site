@@ -20,7 +20,6 @@ export default function Nav({ location }) {
     <NavButtonContainer>
       <Link to={locations.INDEX}>
         <Button
-          content="Home"
           margin="0 8px 0 0"
           fontSize="24px"
           fontFamily={"Delicious Handrawn"}
@@ -29,11 +28,12 @@ export default function Nav({ location }) {
               ? themes.secondary
               : themes.default
           }
-        />
+        >
+          Home
+        </Button>
       </Link>
       <Link to={locations.ART}>
         <Button
-          content="Art"
           margin="0 8px 0 0"
           fontSize="24px"
           fontFamily={"Delicious Handrawn"}
@@ -42,11 +42,12 @@ export default function Nav({ location }) {
               ? themes.secondary
               : themes.default
           }
-        />
+        >
+          Art
+        </Button>
       </Link>
       <Link to={locations.CODE}>
         <Button
-          content="Code"
           margin="0 8px 0 0"
           fontSize="24px"
           fontFamily={"Delicious Handrawn"}
@@ -55,11 +56,12 @@ export default function Nav({ location }) {
               ? themes.secondary
               : themes.default
           }
-        />
+        >
+          Code
+        </Button>
       </Link>
       <Link to={locations.BLOG}>
         <Button
-          content="Blog"
           margin="0 8px 0 0"
           fontSize="24px"
           fontFamily={"Delicious Handrawn"}
@@ -68,7 +70,9 @@ export default function Nav({ location }) {
               ? themes.secondary
               : themes.default
           }
-        />
+        >
+          Blog
+        </Button>
       </Link>
     </NavButtonContainer>
   );

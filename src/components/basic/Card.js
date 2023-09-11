@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { colors } from "../constants";
 
 const Container = styled.div`
+  display: flex;
+  justify-content: center;
   flex: 1;
   background: ${(p) => p.background};
   border-radius: ${(p) => p.borderRadius};

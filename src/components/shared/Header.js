@@ -93,12 +93,13 @@ export default function Header({ location }) {
         <SocialsContainer>
           <Link to={"/contact"}>
             <Button
-              content="Contact"
               margin="0 16px 0 0"
               fontSize="24px"
               fontFamily={"Delicious Handrawn"}
               theme={themes.tertiary}
-            />
+            >
+              Contact
+            </Button>
           </Link>
           <ExternalLink href="http://instagram.com/shroommu">
             <SocialIcon src={InstagramIcon} height="48px" margin="0 8px 0 0" />

@@ -28,6 +28,7 @@ const ButtonContainer = styled.button`
   margin: ${(p) => p.margin};
   background: ${(p) => p.theme.background};
   height: fit-content;
+  width: fit-content;
   border-radius: 10px;
   font-family: ${(p) => p.fontFamily};
   font-size: ${(p) => p.fontSize};
@@ -43,12 +44,13 @@ const ButtonContainer = styled.button`
 `;
 
 export default function Button({
-  content,
+  children,
   onClick,
   margin,
   fontSize,
   fontFamily,
   theme,
+  type,
 }) {
   return (
     <ButtonContainer
@@ -57,10 +59,14 @@ export default function Button({
       fontSize={fontSize}
       fontFamily={fontFamily}
       theme={theme}
+      type={type}
     >
-      {content}
+      {children}
     </ButtonContainer>
   );
 }
 
-Button.defaultProps = { theme: themes.default };
+Button.defaultProps = {
+  theme: themes.default,
+  fontFamily: "Delicious Handrawn",
+};
