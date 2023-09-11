@@ -32,10 +32,10 @@ function App() {
         <Background location={location} />
         <Routes>
           <Route path="/" index element={<Home />} />
-          <Route path="/code" element={<Code />} />
-          <Route path="/art" element={<Art />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/code/" element={<Code />} />
+          <Route path="/art/" element={<Art />} />
+          <Route path="/blog/" element={<Blog />} />
+          <Route path="/contact/" element={<Contact />} />
         </Routes>
         <Footer />
       </PageContainer>

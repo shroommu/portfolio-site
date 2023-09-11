@@ -91,7 +91,7 @@ export default function Header({ location }) {
         </Link>
         <Nav location={location} />
         <SocialsContainer>
-          <Link to={"/contact"}>
+          <Link to={"/contact/"}>
             <Button
               margin="0 16px 0 0"
               fontSize="24px"
