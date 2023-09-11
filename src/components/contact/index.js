@@ -14,6 +14,7 @@ const Heading = styled(UnstyledHeading)`
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 
 export default function Contact({}) {
