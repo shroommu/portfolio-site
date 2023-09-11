@@ -16,6 +16,6 @@ export const Tree3 = styled(tree3)`
   ${(props) => treeStyles(props)}
 `;
 
-export const SocialIcon = styled.img`
+export const Icon = styled.img`
   ${(props) => iconStyles(props)};
 `;

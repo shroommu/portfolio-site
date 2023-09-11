@@ -5,11 +5,13 @@ const BaseInput = styled.input`
   font-family: Bitter;
 `;
 
-export default function Input({ value, onChange }) {
+export default function Input({ value, onChange, className }) {
   const handleChange = (e) => {
     const { value } = e.target;
     onChange(value);
   };
 
-  return <BaseInput value={value} onChange={handleChange} />;
+  return (
+    <BaseInput value={value} onChange={handleChange} className={className} />
+  );
 }

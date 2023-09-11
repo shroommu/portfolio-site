@@ -10,7 +10,7 @@ const Container = styled.div`
   position: relative;
 `;
 
-export default function Art({}) {
+export default function Art() {
   return (
     <Container>
       <Section testId="art-section">

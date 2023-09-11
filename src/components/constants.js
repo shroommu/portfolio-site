@@ -29,6 +29,7 @@ export const colors = {
     background: "#de752d",
     hover: "#c86929",
     active: "#b25e24",
+    disabled: "#eeba97",
     fontColor: "#ffffff",
   },
 };

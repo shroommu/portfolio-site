@@ -11,3 +11,10 @@ export const device = {
   laptop: `(max-width: ${size.laptop})`,
   desktop: `(max-width: ${size.desktop})`,
 };
+
+export const locations = {
+  INDEX: "/",
+  ART: "/art/",
+  BLOG: "/blog/",
+  CODE: "/code/",
+};

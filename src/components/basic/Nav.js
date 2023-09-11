@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 import Button, { themes } from "./Button";
-import { device } from "../../constants";
+import { device, locations } from "../../constants";
 
 const NavButtonContainer = styled.div`
   display: flex;
@@ -12,8 +12,6 @@ const NavButtonContainer = styled.div`
     display: none;
   }
 `;
-
-const locations = { INDEX: "/", ART: "/art/", BLOG: "/blog/", CODE: "/code/" };
 
 export default function Nav({ location }) {
   return (

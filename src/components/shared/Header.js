@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import styled from "styled-components";
 import { colors } from "../constants";
-import { SocialIcon } from "../../assets";
+import { Icon } from "../../assets";
 
 import LinkedInIcon from "../../assets/icons/icons8-linkedin-64.png";
 import GithubIcon from "../../assets/icons/icons8-github-64.png";
@@ -102,13 +102,13 @@ export default function Header({ location }) {
             </Button>
           </Link>
           <ExternalLink href="http://instagram.com/shroommu">
-            <SocialIcon src={InstagramIcon} height="48px" margin="0 8px 0 0" />
+            <Icon src={InstagramIcon} height="48px" margin="0 8px 0 0" />
           </ExternalLink>
           <ExternalLink href="http://github.com/shroommu">
-            <SocialIcon src={GithubIcon} height="48px" margin="0 8px 0 0" />
+            <Icon src={GithubIcon} height="48px" margin="0 8px 0 0" />
           </ExternalLink>
           <ExternalLink href="http://linkedin.com/in/alexa-kruckenberg">
-            <SocialIcon src={LinkedInIcon} height="48px" margin="0" />
+            <Icon src={LinkedInIcon} height="48px" margin="0" />
           </ExternalLink>
         </SocialsContainer>
       </NavigationBar>

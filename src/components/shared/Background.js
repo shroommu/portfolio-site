@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
 import { CSSTransition } from "react-transition-group";
 
-import { device } from "../../constants";
+import { device, locations } from "../../constants";
 import { colors } from "../constants";
 
 import { Tree1, Tree2, Tree3 } from "../../assets";
@@ -161,11 +161,13 @@ export default function Background({ location }) {
               testId="middle-tree-left"
               ref={foxTreeRef}
             />
-            <FoxArt
-              test-id="fox-art"
-              offsetX={foxOffset[0]}
-              offsetY={foxOffset[1]}
-            />
+            {location.pathname === locations.INDEX && (
+              <FoxArt
+                test-id="fox-art"
+                offsetX={foxOffset[0]}
+                offsetY={foxOffset[1]}
+              />
+            )}
             <Tree1
               fillColor={colors.furthestTree}
               zIndex={1}

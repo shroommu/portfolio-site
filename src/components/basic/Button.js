@@ -18,6 +18,7 @@ export const themes = {
     background: colors.tertiaryButton.background,
     hover: colors.tertiaryButton.hover,
     active: colors.tertiaryButton.active,
+    disabled: colors.tertiaryButton.disabled,
     fontColor: colors.tertiaryButton.fontColor,
   },
 };
@@ -41,6 +42,20 @@ const ButtonContainer = styled.button`
   &:active {
     background: ${(p) => p.theme.active};
   }
+
+  ${(p) =>
+    p.disabled &&
+    `background: ${p.theme.disabled};
+    cursor: not-allowed;
+    
+    &:hover {
+      background: ${p.theme.disabled};
+    }
+
+    &:active {
+      background: ${p.theme.disabled};
+    }
+    `}
 `;
 
 export default function Button({
@@ -51,6 +66,7 @@ export default function Button({
   fontFamily,
   theme,
   type,
+  disabled,
 }) {
   return (
     <ButtonContainer
@@ -60,6 +76,7 @@ export default function Button({
       fontFamily={fontFamily}
       theme={theme}
       type={type}
+      disabled={disabled}
     >
       {children}
     </ButtonContainer>
