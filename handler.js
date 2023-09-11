@@ -1,18 +1,47 @@
 "use strict";
 
-module.exports.staticSiteMailer = async (event) => {
-  return {
-    statusCode: 200,
-    body: JSON.stringify(
-      {
-        message: "Go Serverless v1.0! Your function executed successfully!",
-        input: event,
+const AWS = require("aws-sdk");
+const SES = new AWS.SES();
+
+function sendEmail(formData, callback) {
+  const emailParams = {
+    Source: "admin@alexakruckenberg.com", // SES SENDING EMAIL
+    ReplyToAddresses: [formData.email],
+    Destination: {
+      ToAddresses: ["admin@alexakruckenberg.com"], // SES RECEIVING EMAIL
+    },
+    Message: {
+      Body: {
+        Text: {
+          Charset: "UTF-8",
+          Data: `${formData.message}\n\nName: ${formData.name}\nEmail: ${formData.email}`,
+        },
       },
-      null,
-      2
-    ),
+      Subject: {
+        Charset: "UTF-8",
+        Data: "New message from alexakruckenberg.com",
+      },
+    },
   };
 
-  // Use this code if you don't use the http event with the LAMBDA-PROXY integration
-  // return { message: 'Go Serverless v1.0! Your function executed successfully!', event };
+  SES.sendEmail(emailParams, callback);
+}
+
+module.exports.staticSiteMailer = (event, context, callback) => {
+  const formData = JSON.parse(event.body);
+
+  sendEmail(formData, function (err, data) {
+    const response = {
+      statusCode: err ? 500 : 200,
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "https://alexakruckenberg.com",
+      },
+      body: JSON.stringify({
+        message: err ? err.message : data,
+      }),
+    };
+
+    callback(null, response);
+  });
 };
