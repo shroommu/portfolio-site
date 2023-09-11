@@ -1,5 +1,5 @@
 {
-  "name": "portfolio-website",
+  "name": "static-site-mailer",
   "homepage": "http://alexakruckenberg.com",
   "version": "0.1.0",
   "private": true,
@@ -15,6 +15,7 @@
     "react-router-dom": "^6.15.0",
     "react-scripts": "5.0.1",
     "react-transition-group": "^4.4.5",
+    "serverless": "^3.34.0",
     "styled-components": "^6.0.7",
     "web-vitals": "^2.1.4"
   },
@@ -51,6 +52,8 @@
     "postcss": "^8.4.29",
     "postcss-custom-media": "^10.0.0",
     "postcss-loader": "^7.3.3",
+    "serverless-plugin-common-excludes": "^4.0.0",
+    "serverless-plugin-include-dependencies": "^5.1.0",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"
   }

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+import { Heading as StyleableHeading } from "../shared";
 import { device } from "../../constants";
 import { colors } from "../constants";
 
@@ -25,12 +26,7 @@ const TextContainer = styled.div`
   }
 `;
 
-const Heading = styled.h1`
-  font-family: Delicious Handrawn;
-  color: ${colors.darkestBlue};
-  margin: 0 0 6px 0;
-  font-size: 36px;
-
+const Heading = styled(StyleableHeading)`
   @media ${device.mobile} {
     text-align: center;
   }

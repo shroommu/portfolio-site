@@ -11,18 +11,21 @@ export const PageContainer = styled.div`
   position: relative;
 `;
 
-const Heading = styled.h1`
+export const Heading = styled.h1`
   font-family: Delicious Handrawn;
   color: ${colors.darkestBlue};
   margin: 0 0 6px 0;
   font-size: 36px;
+`;
+
+const CenteredHeading = styled(Heading)`
   text-align: center;
 `;
 
 export function ComingSoon() {
   return (
     <div>
-      <Heading>Coming Soon!</Heading>
+      <CenteredHeading>Coming Soon!</CenteredHeading>
     </div>
   );
 }
