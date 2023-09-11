@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
+import { CSSTransition } from "react-transition-group";
 
 import { device } from "../../constants";
 import { colors } from "../constants";
@@ -90,7 +91,7 @@ const MobileTreeContainer = styled.div`
 const FoxArt = styled(fox)`
   transform: translate(
     calc(calc(${(p) => p.offsetX}px - 250px) / 5),
-    calc(${(p) => p.offsetY}px - ${(p) => p.offsetY / 4.5}px)
+    calc(${(p) => p.offsetY}px - ${(p) => p.offsetY / 3}px)
   );
   z-index: 2;
   position: absolute;
@@ -107,7 +108,7 @@ const MobileFoxArt = styled(fox)`
   max-height: 150px;
 `;
 
-export default function Background() {
+export default function Background({ location }) {
   const [foxOffset, setFoxOffset] = useState([0, 0]);
   const [mobileFoxOffset, setMobileFoxOffset] = useState([0, 0]);
 
@@ -137,116 +138,120 @@ export default function Background() {
         <GroundEllipse testId="ground-elipse" />
         <SkyFill testId="ground-rectangle-fill" />
       </GroundContainer>
-      <TreesLeftContainer testId="trees-left-container">
-        <Tree2
-          fillColor={colors.closestTree}
-          zIndex={3}
-          preserveAspectRatio="none"
-          rightPos="60%"
-          bottomPos="0%"
-          height="100%"
-          maxWidth="65%"
-          testId="closest-tree-left"
-        />
-        <Tree3
-          fillColor={colors.middleTree}
-          zIndex={2}
-          height="95%"
-          maxWidth="65%"
-          bottomPos="5%"
-          preserveAspectRatio="none"
-          testId="middle-tree-left"
-          ref={foxTreeRef}
-        />
-        <FoxArt
-          test-id="fox-art"
-          offsetX={foxOffset[0]}
-          offsetY={foxOffset[1]}
-        />
-        <Tree1
-          fillColor={colors.furthestTree}
-          zIndex={1}
-          height="90%"
-          maxWidth="65%"
-          bottomPos="10%"
-          rightPos="0%"
-          preserveAspectRatio="none"
-          testId="furthest-tree-left"
-        />
-      </TreesLeftContainer>
-      <TreesRightContainer testId="trees-right-container">
-        <Tree3
-          fillColor={colors.closestTree}
-          zIndex={3}
-          flipX={true}
-          bottomPos="0%"
-          rightPos="-40%"
-          height="100%"
-          maxWidth="80%"
-          preserveAspectRatio="none"
-          testId="tree-closest-right"
-        />
-        <Tree1
-          fillColor={colors.middleTree}
-          zIndex={2}
-          flipX={true}
-          height="95%"
-          maxWidth="80%"
-          bottomPos="5%"
-          rightPos="-10%"
-          preserveAspectRatio="none"
-          testId="tree-middle-right"
-        />
-        <Tree2
-          fillColor={colors.furthestTree}
-          zIndex={1}
-          flipX={true}
-          height="90%"
-          maxWidth="80%"
-          bottomPos="10%"
-          rightPos="10%"
-          preserveAspectRatio="none"
-          testId="tree-furthest-right"
-        />
-      </TreesRightContainer>
-      <MobileTreeContainer test-id="mobile-tree-container">
-        <MobileFoxArt
-          test-id="mobile-fox-art"
-          offsetX={mobileFoxOffset[0]}
-          offsetY={mobileFoxOffset[1]}
-        />
-        <Tree2
-          fillColor={colors.closestTree}
-          zIndex={3}
-          preserveAspectRatio="none"
-          rightPos="65%"
-          bottomPos="5%"
-          height="100%"
-          maxWidth="45%"
-          testId="closest-tree-mobile"
-          ref={mobileFoxTreeRef}
-        />
-        <Tree3
-          fillColor={colors.middleTree}
-          zIndex={2}
-          height="90%"
-          maxWidth="45%"
-          rightPos="30%"
-          bottomPos="10%"
-          preserveAspectRatio="none"
-          testId="middle-tree-mobile"
-        />
-        <Tree1
-          fillColor={colors.furthestTree}
-          zIndex={1}
-          height="85%"
-          maxWidth="45%"
-          bottomPos="15%"
-          rightPos="-10%"
-          preserveAspectRatio="none"
-          testId="furthest-tree-mobile"
-        />
-      </MobileTreeContainer>
+      <CSSTransition>
+        <>
+          <TreesLeftContainer testId="trees-left-container">
+            <Tree2
+              fillColor={colors.closestTree}
+              zIndex={3}
+              preserveAspectRatio="none"
+              rightPos="60%"
+              bottomPos="0%"
+              height="100%"
+              maxWidth="65%"
+              testId="closest-tree-left"
+            />
+            <Tree3
+              fillColor={colors.middleTree}
+              zIndex={2}
+              height="95%"
+              maxWidth="65%"
+              bottomPos="5%"
+              preserveAspectRatio="none"
+              testId="middle-tree-left"
+              ref={foxTreeRef}
+            />
+            <FoxArt
+              test-id="fox-art"
+              offsetX={foxOffset[0]}
+              offsetY={foxOffset[1]}
+            />
+            <Tree1
+              fillColor={colors.furthestTree}
+              zIndex={1}
+              height="90%"
+              maxWidth="65%"
+              bottomPos="10%"
+              rightPos="0%"
+              preserveAspectRatio="none"
+              testId="furthest-tree-left"
+            />
+          </TreesLeftContainer>
+          <TreesRightContainer testId="trees-right-container">
+            <Tree3
+              fillColor={colors.closestTree}
+              zIndex={3}
+              flipX={true}
+              bottomPos="0%"
+              rightPos="-40%"
+              height="100%"
+              maxWidth="80%"
+              preserveAspectRatio="none"
+              testId="tree-closest-right"
+            />
+            <Tree1
+              fillColor={colors.middleTree}
+              zIndex={2}
+              flipX={true}
+              height="95%"
+              maxWidth="80%"
+              bottomPos="5%"
+              rightPos="-10%"
+              preserveAspectRatio="none"
+              testId="tree-middle-right"
+            />
+            <Tree2
+              fillColor={colors.furthestTree}
+              zIndex={1}
+              flipX={true}
+              height="90%"
+              maxWidth="80%"
+              bottomPos="10%"
+              rightPos="10%"
+              preserveAspectRatio="none"
+              testId="tree-furthest-right"
+            />
+          </TreesRightContainer>
+          <MobileTreeContainer test-id="mobile-tree-container">
+            <MobileFoxArt
+              test-id="mobile-fox-art"
+              offsetX={mobileFoxOffset[0]}
+              offsetY={mobileFoxOffset[1]}
+            />
+            <Tree2
+              fillColor={colors.closestTree}
+              zIndex={3}
+              preserveAspectRatio="none"
+              rightPos="65%"
+              bottomPos="5%"
+              height="100%"
+              maxWidth="45%"
+              testId="closest-tree-mobile"
+              ref={mobileFoxTreeRef}
+            />
+            <Tree3
+              fillColor={colors.middleTree}
+              zIndex={2}
+              height="90%"
+              maxWidth="45%"
+              rightPos="30%"
+              bottomPos="10%"
+              preserveAspectRatio="none"
+              testId="middle-tree-mobile"
+            />
+            <Tree1
+              fillColor={colors.furthestTree}
+              zIndex={1}
+              height="85%"
+              maxWidth="45%"
+              bottomPos="15%"
+              rightPos="-10%"
+              preserveAspectRatio="none"
+              testId="furthest-tree-mobile"
+            />
+          </MobileTreeContainer>
+        </>
+      </CSSTransition>
     </BackgroundContainer>
   );
 }
