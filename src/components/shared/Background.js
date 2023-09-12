@@ -12,6 +12,7 @@ const BackgroundContainer = styled.div`
   display: flex;
   flex: 1;
   height: 90vh;
+  max-height: 650px;
   top: 50px;
   width: 100%;
   justify-content: space-between;
