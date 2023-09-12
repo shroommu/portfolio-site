@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colors, footerHeight } from "../constants";
+import { device } from "../../constants";
 
 export const PageContainer = styled.div`
   display: flex;
@@ -16,6 +17,16 @@ export const Heading = styled.h1`
   color: ${colors.darkestBlue};
   margin: 0 0 6px 0;
   font-size: 36px;
+`;
+
+export const WebsiteName = styled.div`
+  font-family: Delicious Handrawn;
+  color: ${colors.white};
+  font-size: 48px;
+
+  @media ${device.mobile} {
+    font-size: 36px;
+  }
 `;
 
 const CenteredHeading = styled(Heading)`

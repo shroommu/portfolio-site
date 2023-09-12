@@ -17,4 +17,5 @@ export const locations = {
   ART: "/art/",
   BLOG: "/blog/",
   CODE: "/code/",
+  CONTACT: "/contact/",
 };

@@ -10,7 +10,8 @@ import InstagramIcon from "../../assets/icons/icons8-instagram-64.png";
 import Button, { themes } from "../basic/Button";
 import ExternalLink from "../basic/Link";
 import Nav from "../basic/Nav";
-import { device } from "../../constants";
+import { device, locations } from "../../constants";
+import { WebsiteName } from ".";
 
 const Container = styled.div`
   display: flex;
@@ -31,16 +32,6 @@ const NavigationBar = styled.nav`
     justify-content: center;
     height: 50px;
     padding: 12px;
-  }
-`;
-
-const WebsiteName = styled.div`
-  font-family: Delicious Handrawn;
-  color: ${colors.white};
-  font-size: 48px;
-
-  @media ${device.mobile} {
-    font-size: 36px;
   }
 `;
 
@@ -86,12 +77,12 @@ export default function Header({ location }) {
     <Container>
       <NavigationBar>
         {/* burger menu */}
-        <Link to="/">
+        <Link to={locations.INDEX}>
           <WebsiteName>Alexa Kruckenberg</WebsiteName>
         </Link>
         <Nav location={location} />
         <SocialsContainer>
-          <Link to={"/contact/"}>
+          <Link to={locations.CONTACT}>
             <Button
               margin="0 16px 0 0"
               fontSize="24px"
