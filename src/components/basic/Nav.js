@@ -30,7 +30,7 @@ export default function Nav({ location }) {
           Home
         </Button>
       </Link>
-      <Link to={locations.ART}>
+      {/* <Link to={locations.ART}>
         <Button
           margin="0 8px 0 0"
           fontSize="24px"
@@ -43,7 +43,7 @@ export default function Nav({ location }) {
         >
           Art
         </Button>
-      </Link>
+      </Link> */}
       <Link to={locations.CODE}>
         <Button
           margin="0 8px 0 0"
