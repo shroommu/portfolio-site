@@ -2,6 +2,9 @@ export const colors = {
   darkestBlue: "#0a2033",
   darkBlue: "#0c2941",
   mediumBlue: "#243e54",
+  lightBlue: "#a0c1da",
+  lightestBlue: "#d0e0ed",
+
   closestTree: "#00335c",
   middleTree: "#004e8b",
   furthestTree: "#1263a3",

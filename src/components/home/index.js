@@ -1,7 +1,7 @@
 import LandingSection from "./LandingSection";
-import Section from "../basic/Section";
-import Gallery from "../basic/Gallery";
-import Card from "../basic/Card";
+// import Section from "../basic/Section";
+// import Gallery from "../basic/Gallery";
+// import Card from "../basic/Card";
 import Featured from "./featured";
 
 export default function Home() {
@@ -9,11 +9,11 @@ export default function Home() {
     <>
       <LandingSection />
       <Featured />
-      <Section testId="gallery-section" margin="0 0 24px 0">
+      {/* <Section testId="gallery-section" margin="0 0 24px 0">
         <Card>
           <Gallery />
         </Card>
-      </Section>
+      </Section> */}
     </>
   );
 }

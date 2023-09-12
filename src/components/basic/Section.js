@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Container = styled.div`
   display: flex;
-  min-height: 100px;
+  min-height: 500px;
   flex: 1;
   padding: ${(p) => p.padding};
   margin: ${(p) => p.margin};
@@ -16,4 +16,4 @@ export default function Section({ testId, children, margin, padding }) {
   );
 }
 
-Section.defaultProps = { padding: "10% 15% 0%", margin: "0 0 24px 0" };
+Section.defaultProps = { padding: "5% 15% 0%", margin: "0 0 24px 0" };

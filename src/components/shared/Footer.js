@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { colors, footerHeight } from "../constants";
 import { locations } from "../../constants";
-import Link from "../basic/Link";
+import { Link } from "react-router-dom";
 import { WebsiteName } from ".";
 
 const Container = styled.div`
@@ -13,6 +13,7 @@ const Container = styled.div`
   min-height: ${footerHeight}px;
   background: ${colors.darkestBlue};
   z-index: 1;
+  margin-top: 48px;
 `;
 
 const CopyrightContainer = styled.div`
@@ -27,7 +28,7 @@ export default function Footer() {
       <Link to={locations.INDEX}>
         <WebsiteName>Alexa Kruckenberg</WebsiteName>
       </Link>
-      <CopyrightContainer>Copyright Alexa Kruckenberg, 2023</CopyrightContainer>
+      <CopyrightContainer>Copyright 2023</CopyrightContainer>
     </Container>
   );
 }

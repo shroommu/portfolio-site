@@ -1,12 +1,20 @@
 import Section from "../basic/Section";
 import Card from "../basic/Card";
-import { ComingSoon } from "../shared";
+import styled from "styled-components";
+import { Heading } from "../shared";
+
+const ContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 export default function Blog() {
   return (
     <Section testId="blog-section">
       <Card zIndex={5}>
-        <ComingSoon />
+        <ContentContainer>
+          <Heading>Blog</Heading>
+        </ContentContainer>
       </Card>
     </Section>
   );

@@ -1,20 +1,23 @@
 {
   "files": {
     "main.css": "/static/css/main.d7595e4b.css",
-    "main.js": "/static/js/main.2d3b6b0f.js",
+    "main.js": "/static/js/main.5617608f.js",
+    "static/media/codeImg1.jpg": "/static/media/codeImg1.c75871b55c7f301fb1ec.jpg",
     "static/media/pfp-circle.png": "/static/media/pfp-circle.737e85de0ff8e5aeb1ea.png",
     "static/media/Bitter-VariableFont_wght.ttf": "/static/media/Bitter-VariableFont_wght.2079c94d0d6679106bfe.ttf",
     "static/media/DeliciousHandrawn-Regular.ttf": "/static/media/DeliciousHandrawn-Regular.f566990bf4d20f0c385c.ttf",
+    "static/media/codeImg3.webp": "/static/media/codeImg3.6167eaf202c7b83ef626.webp",
+    "static/media/codeImg2.jpg": "/static/media/codeImg2.6f5d211c02e964d2bed4.jpg",
     "static/media/fox.svg": "/static/media/fox.66e3538c9a0cfda815cddb6c8c6fcad9.svg",
     "static/media/tree1.svg": "/static/media/tree1.34b86d4b975e2b81d1851ba246287df4.svg",
     "static/media/tree3.svg": "/static/media/tree3.3a474976a45f1ee2b3241c9a8dfd430f.svg",
     "static/media/tree2.svg": "/static/media/tree2.a333f6123611cfbfbeebf5bfabd4c3be.svg",
     "index.html": "/index.html",
     "main.d7595e4b.css.map": "/static/css/main.d7595e4b.css.map",
-    "main.2d3b6b0f.js.map": "/static/js/main.2d3b6b0f.js.map"
+    "main.5617608f.js.map": "/static/js/main.5617608f.js.map"
   },
   "entrypoints": [
     "static/css/main.d7595e4b.css",
-    "static/js/main.2d3b6b0f.js"
+    "static/js/main.5617608f.js"
   ]
 }

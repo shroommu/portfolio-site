@@ -12,12 +12,19 @@ const Container = styled.div`
   padding: 24px;
 `;
 
-export default function Card({ background, borderRadius, zIndex, children }) {
+export default function Card({
+  background,
+  borderRadius,
+  zIndex,
+  children,
+  className,
+}) {
   return (
     <Container
       background={background}
       borderRadius={borderRadius}
       zIndex={zIndex}
+      className={className}
     >
       {children}
     </Container>
