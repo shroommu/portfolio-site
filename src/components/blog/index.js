@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Heading } from "../shared";
 import BlogPost from "./BlogPost";
 
-import FirstPost from "./posts/firstPost.mdx";
+import FirstPost from "../../data/posts/9-14-2023-building-site-part-1.mdx";
 
 const ContentContainer = styled.div`
   display: flex;

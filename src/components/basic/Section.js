@@ -16,4 +16,4 @@ export default function Section({ testId, children, margin, padding }) {
   );
 }
 
-Section.defaultProps = { padding: "5% 15% 0%", margin: "0 0 24px 0" };
+Section.defaultProps = { padding: "64px 200px 0", margin: "0 0 24px 0" };
