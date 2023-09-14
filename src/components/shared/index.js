@@ -16,7 +16,7 @@ export const Heading = styled.h1`
   font-family: Delicious Handrawn;
   color: ${colors.darkestBlue};
   margin: 0 0 6px 0;
-  font-size: 36px;
+  font-size: 42px;
 `;
 
 export const WebsiteName = styled.div`
@@ -28,15 +28,3 @@ export const WebsiteName = styled.div`
     font-size: 36px;
   }
 `;
-
-const CenteredHeading = styled(Heading)`
-  text-align: center;
-`;
-
-export function ComingSoon() {
-  return (
-    <div>
-      <CenteredHeading>Coming Soon!</CenteredHeading>
-    </div>
-  );
-}

@@ -9,6 +9,7 @@ module.exports = {
     path: __dirname + "/dist",
     filename: "bundle.js",
     publicPath: "",
+    hashFunction: "xxhash64",
   },
   plugins: [
     new MiniCssExtractPlugin({
@@ -45,10 +46,10 @@ module.exports = {
           },
         ],
       },
-      {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: "asset/resource",
-      },
+      // {
+      //   test: /\.(png|svg|jpg|jpeg|gif)$/i,
+      //   type: "asset/resource",
+      // },
       {
         test: /\.(jsx|js)$/,
         exclude: /node_modules/,
@@ -66,6 +67,16 @@ module.exports = {
                 "@babel/preset-react",
               ],
             },
+          },
+        ],
+      },
+      {
+        test: /\.mdx?$/,
+        use: [
+          {
+            loader: "@mdx-js/loader",
+            /** @type {import('@mdx-js/loader').Options} */
+            options: {},
           },
         ],
       },
