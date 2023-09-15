@@ -44,7 +44,7 @@ export default function Nav({ location }) {
           Art
         </Button>
       </Link> */}
-      <Link to={locations.CODE}>
+      {/* <Link to={locations.CODE}>
         <Button
           margin="0 8px 0 0"
           fontSize="24px"
@@ -57,7 +57,7 @@ export default function Nav({ location }) {
         >
           Code
         </Button>
-      </Link>
+      </Link> */}
       <Link to={locations.BLOG}>
         <Button
           margin="0 8px 0 0"
