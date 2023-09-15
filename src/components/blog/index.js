@@ -2,9 +2,9 @@ import Section from "../basic/Section";
 import Card from "../basic/Card";
 import styled from "styled-components";
 import { Heading } from "../shared";
-import BlogPost from "./BlogPost";
+import { Link } from "react-router-dom";
 
-import FirstPost from "../../data/posts/9-14-2023-building-site-part-1.mdx";
+import blogMetadata from "../../data/blogMetadata.json";
 
 const ContentContainer = styled.div`
   display: flex;
@@ -16,10 +16,17 @@ export default function Blog() {
     <Section testId="blog-section">
       <Card zIndex={5}>
         <ContentContainer>
-          <Heading>Blog</Heading>
-          <BlogPost>
-            <FirstPost />
-          </BlogPost>
+          <Heading>Blog Posts</Heading>
+          {blogMetadata.map((postmetadata) => {
+            return (
+              <Link
+                to={`/blog/post${postmetadata.slug}`}
+                key={postmetadata.slug}
+              >
+                {postmetadata.title}
+              </Link>
+            );
+          })}
         </ContentContainer>
       </Card>
     </Section>

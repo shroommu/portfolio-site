@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Children } from "react";
 import ReactDOM from "react-dom/client";
 import { Routes, Route, BrowserRouter, useLocation } from "react-router-dom";
 
@@ -14,6 +14,8 @@ import Background from "./components/shared/Background.js";
 
 import "./global.css";
 import { PageContainer } from "./components/shared/index.js";
+import useBlogRoutes from "./components/blog/routes.js";
+import BlogPost from "./components/blog/BlogPost.js";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -24,6 +26,7 @@ root.render(
 
 function App() {
   const location = useLocation();
+  const blogRoutes = useBlogRoutes();
 
   return (
     <React.StrictMode>
@@ -35,6 +38,11 @@ function App() {
           <Route path="/code/" element={<Code />} />
           <Route path="/art/" element={<Art />} />
           <Route path="/blog/" element={<Blog />} />
+          <Route
+            path="/blog/post/"
+            element={<BlogPost />}
+            children={blogRoutes}
+          />
           <Route path="/contact/" element={<Contact />} />
         </Routes>
         <Footer />

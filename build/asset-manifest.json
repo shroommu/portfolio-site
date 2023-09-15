@@ -1,11 +1,12 @@
 {
   "files": {
     "main.css": "/static/css/main.d7595e4b.css",
-    "main.js": "/static/js/main.b96181e6.js",
+    "main.js": "/static/js/main.b022d78d.js",
     "static/media/codeImg1.jpg": "/static/media/codeImg1.c75871b55c7f301fb1ec.jpg",
     "static/media/pfp-circle.png": "/static/media/pfp-circle.737e85de0ff8e5aeb1ea.png",
     "static/media/Bitter-VariableFont_wght.ttf": "/static/media/Bitter-VariableFont_wght.2079c94d0d6679106bfe.ttf",
     "static/media/DeliciousHandrawn-Regular.ttf": "/static/media/DeliciousHandrawn-Regular.f566990bf4d20f0c385c.ttf",
+    "static/media/siteConceptArt.png": "/static/media/siteConceptArt.7d97ef6ee14c3b460a4a.png",
     "static/media/codeImg3.webp": "/static/media/codeImg3.6167eaf202c7b83ef626.webp",
     "static/media/codeImg2.jpg": "/static/media/codeImg2.6f5d211c02e964d2bed4.jpg",
     "static/media/fox.svg": "/static/media/fox.66e3538c9a0cfda815cddb6c8c6fcad9.svg",
@@ -14,10 +15,10 @@
     "static/media/tree2.svg": "/static/media/tree2.a333f6123611cfbfbeebf5bfabd4c3be.svg",
     "index.html": "/index.html",
     "main.d7595e4b.css.map": "/static/css/main.d7595e4b.css.map",
-    "main.b96181e6.js.map": "/static/js/main.b96181e6.js.map"
+    "main.b022d78d.js.map": "/static/js/main.b022d78d.js.map"
   },
   "entrypoints": [
     "static/css/main.d7595e4b.css",
-    "static/js/main.b96181e6.js"
+    "static/js/main.b022d78d.js"
   ]
 }

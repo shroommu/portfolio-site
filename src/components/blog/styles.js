@@ -7,6 +7,7 @@ export const Header1 = styled.h1`
   color: ${colors.darkestBlue};
   margin: 0 0 6px 0;
   font-size: 36px;
+  text-align: center;
 `;
 
 export const Header2 = styled.h2`
@@ -14,9 +15,10 @@ export const Header2 = styled.h2`
   color: ${colors.darkestBlue};
   margin: 0 0 6px 0;
   font-size: 24px;
+  text-align: center;
 `;
 
 export const Paragraph = styled.p`
   font-family: Bitter;
-  align-text: center-justify;
+  text-align: justify;
 `;

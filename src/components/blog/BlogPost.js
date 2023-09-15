@@ -1,18 +1,21 @@
 import styled from "styled-components";
-import { MDXProvider } from "@mdx-js/react";
+import { Outlet } from "react-router-dom";
+import Card from "../basic/Card";
+import Section from "../basic/Section";
 
-import FirstPost from "../../data/posts/9-14-2023-building-site-part-1.mdx";
-
-import { Header1, Header2, Paragraph } from "./styles";
-
-const Container = styled.article``;
-
-const components = {
-  h1: Header1,
-  h2: Header2,
-  p: Paragraph,
-};
+const Container = styled.article`
+  display: flex;
+  flex-direction: column;
+`;
 
 export default function BlogPost({ children }) {
-  return <Container>{children}</Container>;
+  return (
+    <Section>
+      <Card zIndex={5}>
+        <Container>
+          <Outlet />
+        </Container>
+      </Card>
+    </Section>
+  );
 }

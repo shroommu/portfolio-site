@@ -28,6 +28,7 @@ async function getArticleFromSlug(slugs) {
     const { _content, data } = matter(source);
 
     const metadata = {
+      filePath: articleDir,
       slug: data.slug,
       excerpt: data.excerpt,
       title: data.title,
@@ -38,7 +39,7 @@ async function getArticleFromSlug(slugs) {
   }
 
   fs.writeFileSync(
-    "src/data/utils/blogMetadata.json",
+    "src/data/blogMetadata.json",
     JSON.stringify(allArticleMetadata),
     {
       flag: "w",
