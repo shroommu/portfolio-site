@@ -2,32 +2,37 @@ import Section from "../basic/Section";
 import Card from "../basic/Card";
 import styled from "styled-components";
 import { Heading } from "../shared";
-import { Link } from "react-router-dom";
 
 import blogMetadata from "../../data/blogMetadata.json";
+import BlogCard from "./BlogCard";
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+`;
 
 const ContentContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  flex: 1;
 `;
 
 export default function Blog() {
   return (
     <Section testId="blog-section">
       <Card zIndex={5}>
-        <ContentContainer>
+        <Container>
           <Heading>Blog Posts</Heading>
-          {blogMetadata.map((postmetadata) => {
-            return (
-              <Link
-                to={`/blog/post${postmetadata.slug}`}
-                key={postmetadata.slug}
-              >
-                {postmetadata.title}
-              </Link>
-            );
-          })}
-        </ContentContainer>
+          <ContentContainer>
+            {blogMetadata.map((postMetaData) => {
+              return (
+                <BlogCard postMetaData={postMetaData} key={postMetaData.slug} />
+              );
+            })}
+          </ContentContainer>
+        </Container>
       </Card>
     </Section>
   );
