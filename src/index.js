@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Routes, Route, BrowserRouter, useLocation } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 
 import Art from "./components/art/index.js";
 import Blog from "./components/blog/index.js";
@@ -19,9 +20,11 @@ import BlogPost from "./components/blog/BlogPost.js";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+  <HelmetProvider>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </HelmetProvider>
 );
 
 function App() {

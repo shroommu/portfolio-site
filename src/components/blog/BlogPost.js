@@ -8,7 +8,7 @@ const Container = styled.article`
   flex-direction: column;
 `;
 
-export default function BlogPost({ children }) {
+export default function BlogPost() {
   return (
     <Section>
       <Card zIndex={5}>
