@@ -19,3 +19,11 @@ export const locations = {
   CODE: "/code/",
   CONTACT: "/contact/",
 };
+
+export const locationsWithLabels = {
+  INDEX: { path: locations.INDEX, label: "Home" },
+  ART: { path: locations.ART, label: "Art" },
+  BLOG: { path: locations.BLOG, label: "Blog" },
+  CODE: { path: locations.CODE, label: "Code" },
+  CONTACT: { path: locations.CONTACT, label: "Contact" },
+};

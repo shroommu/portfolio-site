@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import Button, { themes } from "./Button";
-import { device, locations } from "../../constants";
+import Button, { themes } from "../Button";
+import { device, locations } from "../../../constants";
 
 const NavButtonContainer = styled.div`
   display: flex;

@@ -1,29 +1,32 @@
+import { useCallback, useState } from "react";
 import { Link } from "react-router-dom";
 
 import styled from "styled-components";
 import { colors } from "../constants";
 import { Icon } from "../../assets";
+import { MdMenu, MdClose } from "react-icons/md";
 
 import LinkedInIcon from "../../assets/icons/icons8-linkedin-64.png";
 import GithubIcon from "../../assets/icons/icons8-github-64.png";
 import InstagramIcon from "../../assets/icons/icons8-instagram-64.png";
 import Button, { themes } from "../basic/Button";
 import ExternalLink from "../basic/Link";
-import Nav from "../basic/Nav";
+import Nav from "../basic/Nav/index.js";
+import Menu from "../basic/Nav/Menu";
 import { device, locations } from "../../constants";
 import { WebsiteName } from ".";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  z-index: 5;
+  z-index: 201;
 `;
 
 const NavigationBar = styled.nav`
   display: flex;
   height: 100px;
   background: ${colors.darkestBlue};
-  z-index: 1;
+  z-index: 200;
   justify-content: space-between;
   align-items: center;
   padding: 0 36px;
@@ -32,6 +35,28 @@ const NavigationBar = styled.nav`
     justify-content: center;
     height: 50px;
     padding: 12px;
+  }
+`;
+
+const MenuIcon = styled(MdMenu)`
+  display: none;
+
+  @media ${device.tablet} or ${device.mobile} {
+    display: block;
+    color: ${colors.white};
+    font-size: 36px;
+    margin-right: 24px;
+  }
+`;
+
+const MenuCloseIcon = styled(MdClose)`
+  display: none;
+
+  @media ${device.tablet} or ${device.mobile} {
+    display: block;
+    color: ${colors.white};
+    font-size: 36px;
+    margin-right: 24px;
   }
 `;
 
@@ -57,7 +82,7 @@ const Leaves = styled.div`
   background-position: 5px center;
   width: 100%;
   height: 100px;
-  z-index: 0;
+  z-index: 200;
 
   @media ${device.mobile} {
     margin-top: -25px;
@@ -73,10 +98,20 @@ const Leaves = styled.div`
 `;
 
 export default function Header({ location }) {
+  const [showMenu, setShowMenu] = useState(false);
+
+  const toggleShowMenu = useCallback(() => {
+    setShowMenu(!showMenu);
+  }, [showMenu, setShowMenu]);
+
   return (
     <Container>
       <NavigationBar>
-        {/* burger menu */}
+        {showMenu ? (
+          <MenuCloseIcon onClick={toggleShowMenu} />
+        ) : (
+          <MenuIcon onClick={toggleShowMenu} />
+        )}
         <Link to={locations.INDEX}>
           <WebsiteName>Alexa Kruckenberg</WebsiteName>
         </Link>
@@ -104,6 +139,7 @@ export default function Header({ location }) {
         </SocialsContainer>
       </NavigationBar>
       <Leaves />
+      {showMenu && <Menu onNavigate={() => setShowMenu(false)} />}
     </Container>
   );
 }

@@ -9,7 +9,6 @@ async function getSlug() {
   const paths = sync(`${articlesPath}/*.mdx`);
 
   return paths.map((path) => {
-    // holds the paths to the directory of the article
     const pathContent = path.split("/");
     const fileName = pathContent[pathContent.length - 1];
     const [slug, _extension] = fileName.split(".");
