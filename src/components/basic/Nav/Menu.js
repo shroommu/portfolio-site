@@ -24,7 +24,7 @@ const NavItemList = styled.ul`
 
 const NavItem = styled.li`
   font-family: Bitter;
-  padding: 6px 0;
+  padding: 18px 0;
   text-align: center;
   list-style-type: none;
   border-bottom: 2px solid ${colors.darkestBlue};
