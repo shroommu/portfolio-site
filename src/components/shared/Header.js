@@ -26,7 +26,7 @@ const NavigationBar = styled.nav`
   display: flex;
   height: 100px;
   background: ${colors.darkestBlue};
-  z-index: 200;
+  z-index: 201;
   justify-content: space-between;
   align-items: center;
   padding: 0 36px;

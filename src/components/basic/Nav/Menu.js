@@ -12,6 +12,7 @@ const Container = styled.div`
   margin-top: 75px;
   width: 100%;
   padding-top: 25px;
+  box-shadow: 0px 10px 10px 0px ${colors.darkBlue};
 `;
 
 const NavItemList = styled.ul`

@@ -10,7 +10,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
-  align-items: center;
 
   @media ${device.tablet} {
     flex-direction: column;
