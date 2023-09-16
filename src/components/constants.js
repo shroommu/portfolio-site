@@ -14,6 +14,8 @@ export const colors = {
   darkerOrange: "#c86929",
   darkestOrange: "#b25e24",
 
+  codeBlock: "#354554",
+
   defaultButton: {
     background: "#ffffff",
     hover: "#d0e0ed",

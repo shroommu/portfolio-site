@@ -22,3 +22,24 @@ export const Paragraph = styled.p`
   font-family: Bitter;
   text-align: justify;
 `;
+
+export const Image = styled.img`
+  margin: 12px auto;
+  max-width: 100%;
+`;
+
+export const Pre = styled.pre`
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  white-space: pre-wrap;
+  word-break: break-word;
+  background-color: ${colors.codeBlock};
+  color: ${colors.white};
+  padding: 6px;
+`;
+
+export const Code = styled.code`
+  background-color: ${colors.codeBlock};
+  color: ${colors.white};
+`;
