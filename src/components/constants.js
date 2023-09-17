@@ -39,4 +39,4 @@ export const colors = {
   },
 };
 
-export const footerHeight = 150;
+export const footerHeight = 50;

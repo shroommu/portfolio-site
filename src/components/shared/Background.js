@@ -11,13 +11,14 @@ import { ReactComponent as fox } from "../../assets/svg/fox.svg";
 const BackgroundContainer = styled.div`
   display: flex;
   flex: 1;
-  height: 80vh;
+  height: 75vh;
   max-height: 650px;
   top: 50px;
   width: 100%;
   justify-content: space-between;
   position: absolute;
   overflow-x: clip;
+  pointer-events: none;
 `;
 
 const GroundContainer = styled.div`

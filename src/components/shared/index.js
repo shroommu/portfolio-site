@@ -5,8 +5,7 @@ import { device } from "../../constants";
 export const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh + ${footerHeight}px);
-  height: calc(100% + ${footerHeight}px);
+  height: 100vh;
   width: 100%;
   background: ${colors.darkBlue};
   position: absolute;
@@ -18,6 +17,7 @@ export const ContentContainer = styled.div`
   flex-direction: column;
   width: 100%;
   background: ${colors.darkBlue};
+  height: calc(100% + ${footerHeight}px);
   overflow: scroll;
   margin-top: -50px;
   padding-top: 50px;

@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import { colors, footerHeight } from "../constants";
-import { locations } from "../../constants";
+import { locations, device } from "../../constants";
 import { Link } from "react-router-dom";
-import { WebsiteName } from ".";
 
 const Container = styled.div`
   display: flex;
@@ -20,6 +19,16 @@ const CopyrightContainer = styled.div`
   font-family: Bitter;
   color: ${colors.white};
   margin-top: 8px;
+`;
+
+export const WebsiteName = styled.div`
+  font-family: Delicious Handrawn;
+  color: ${colors.white};
+  font-size: 36px;
+
+  @media ${device.mobile} {
+    font-size: 24px;
+  }
 `;
 
 export default function Footer() {
