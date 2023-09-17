@@ -19,6 +19,10 @@ const BackgroundContainer = styled.div`
   position: absolute;
   overflow-x: clip;
   pointer-events: none;
+
+  @media ${device.tablet} {
+    display: none;
+  }
 `;
 
 const GroundContainer = styled.div`
@@ -43,6 +47,10 @@ const GroundEllipse = styled.div`
   position: absolute;
   left: -100%;
   bottom: -50%;
+
+  @media ${device.mobile} {
+    display: none;
+  }
 `;
 
 const SkyFill = styled.div`

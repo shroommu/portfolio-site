@@ -11,9 +11,9 @@ const Container = styled.div`
   padding: 24px;
   height: ${footerHeight}px;
   background: ${colors.darkestBlue};
-  margin-right: -50px;
+  margin: 24px -50px 0 0;
   z-index: 1;
-  margin-top: 48px;
+  padding: 25px 75px 25px 25px;
 `;
 
 const CopyrightContainer = styled.div`
@@ -34,7 +34,7 @@ export const WebsiteName = styled.div`
 
 export default function Footer() {
   return (
-    <Container>
+    <Container test-id="footer-container">
       <Link to={locations.INDEX}>
         <WebsiteName>Alexa Kruckenberg</WebsiteName>
       </Link>

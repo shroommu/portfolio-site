@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { locationsWithLabels } from "../../../constants";
+import { device, locationsWithLabels } from "../../../constants";
 import { colors } from "../../constants";
 
 const Container = styled.div`
@@ -11,8 +11,16 @@ const Container = styled.div`
   position: absolute;
   margin-top: 75px;
   width: 100%;
-  padding-top: 25px;
-  box-shadow: 0px 10px 10px 0px ${colors.darkBlue};
+
+  @media ${device.tablet} {
+    padding-top: 50px;
+    box-shadow: 0px 20px 20px 10px ${colors.darkestBlue};
+  }
+
+  @media ${device.mobile} {
+    padding-top: 25px;
+    box-shadow: 0px 10px 10px 5px ${colors.darkestBlue};
+  }
 `;
 
 const NavItemList = styled.ul`
@@ -28,6 +36,14 @@ const NavItem = styled.li`
   text-align: center;
   list-style-type: none;
   border-bottom: 2px solid ${colors.darkestBlue};
+
+  @media ${device.tablet} {
+    font-size: 24px;
+  }
+
+  @media ${device.mobile} {
+    font-size: unset;
+  }
 `;
 
 const navItems = [
