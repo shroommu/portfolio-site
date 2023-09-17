@@ -11,7 +11,7 @@ const Container = styled.div`
   padding: 24px;
   height: ${footerHeight}px;
   background: ${colors.darkestBlue};
-  width: 100%
+  margin-right: -50px;
   z-index: 1;
   margin-top: 48px;
 `;
