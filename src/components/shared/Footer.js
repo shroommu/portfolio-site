@@ -9,8 +9,9 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   padding: 24px;
-  min-height: ${footerHeight}px;
+  height: ${footerHeight}px;
   background: ${colors.darkestBlue};
+  width: 100%
   z-index: 1;
   margin-top: 48px;
 `;

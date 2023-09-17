@@ -19,8 +19,8 @@ export const ContentContainer = styled.div`
   background: ${colors.darkBlue};
   height: calc(100% + ${footerHeight}px);
   overflow: scroll;
-  margin-top: -50px;
-  padding-top: 50px;
+  margin: -50px -50px 0 0;
+  padding: 50px 50px 0 0;
 `;
 
 export const Heading = styled.h1`
