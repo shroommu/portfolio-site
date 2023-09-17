@@ -43,3 +43,8 @@ export const Code = styled.code`
   background-color: ${colors.codeBlock};
   color: ${colors.white};
 `;
+
+export const Link = styled.a`
+  color: ${colors.darkBlue};
+  text-decoration: underline;
+`;
