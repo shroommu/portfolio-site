@@ -21,14 +21,18 @@ const ContentContainer = styled.div`
 
 export default function Blog() {
   return (
-    <Section testId="blog-section">
-      <Card zIndex={5}>
-        <Container>
+    <Section testId="blog-home-section">
+      <Card testId="blog-home-card">
+        <Container test-id="blog-card-content-container">
           <Heading>Blog Posts</Heading>
-          <ContentContainer>
+          <ContentContainer test-id="blog-posts-container">
             {blogMetadata.map((postMetaData) => {
               return (
-                <BlogCard postMetaData={postMetaData} key={postMetaData.slug} />
+                <BlogCard
+                  postMetaData={postMetaData}
+                  key={postMetaData.slug}
+                  testId={`blog-card-${postMetaData.slug}`}
+                />
               );
             })}
           </ContentContainer>

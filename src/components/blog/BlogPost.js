@@ -10,9 +10,9 @@ const Container = styled.article`
 
 export default function BlogPost() {
   return (
-    <Section>
-      <Card zIndex={5}>
-        <Container>
+    <Section testId="blog-post-section">
+      <Card testId="blog-post-card">
+        <Container testId="blog-post-container">
           <Outlet />
         </Container>
       </Card>

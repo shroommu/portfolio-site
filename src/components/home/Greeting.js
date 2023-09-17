@@ -78,15 +78,15 @@ const ProfilePicture = styled.img`
 
 export default function Greeting() {
   return (
-    <Section testId="landing-section">
-      <Card zIndex={4}>
+    <Section testId="greeting-section">
+      <Card testId="greeting-card">
         <Container test-id="greeting-container">
-          <ProfilePictureContainer>
+          <ProfilePictureContainer test-id="profile-picture-container">
             <ProfilePicture src={pfp} test-id="profile-picture" />
           </ProfilePictureContainer>
           <TextContainer test-id="greeting-text-container">
-            <Heading>Hi, I'm Alexa!</Heading>
-            <SubHeading>
+            <Heading test-id="greeting-header">Hi, I'm Alexa!</Heading>
+            <SubHeading test-id="greeting-subheader">
               Software Developer, Artist, Pokemon Enthusiast
             </SubHeading>
             <Paragraph>

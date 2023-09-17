@@ -37,20 +37,23 @@ const ContentTitle = styled.div`
 `;
 
 const content = [
-  { text: "A cool coding project", img: codeImg1 },
-  { text: "Another cool coding project", img: codeImg2 },
-  { text: "A cool third coding project", img: codeImg3 },
+  { text: "A cool coding project", img: codeImg1, id: 1 },
+  { text: "Another cool coding project", img: codeImg2, id: 2 },
+  { text: "A cool third coding project", img: codeImg3, id: 3 },
 ];
 
 export default function Featured() {
   return (
     <Section testId="featured-section" margin="0 0 24px 0">
-      <FeaturedCard zIndex={5}>
+      <FeaturedCard testId="featured-card">
         <Heading>Featured Projects</Heading>
         <ContentCardsContainer>
           {content.map((contentObj) => {
             return (
-              <ContentCard>
+              <ContentCard
+                key={contentObj.id}
+                test-id={`content-card-${contentObj.id}`}
+              >
                 <ContentImg src={contentObj.img} />
                 <ContentTitle>{contentObj.text}</ContentTitle>
               </ContentCard>

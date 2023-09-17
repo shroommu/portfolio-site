@@ -34,5 +34,5 @@ export default function Card({
 Card.defaultProps = {
   background: colors.white,
   borderRadius: "30px",
-  zIndex: 0,
+  zIndex: 30,
 };

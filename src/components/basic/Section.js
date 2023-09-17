@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { device } from "../../constants";
 
-const Container = styled.div`
+const Container = styled.section`
   display: flex;
   flex: 1;
   padding: ${(p) => p.padding};

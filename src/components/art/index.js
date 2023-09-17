@@ -13,7 +13,7 @@ export default function Art() {
   return (
     <Container>
       <Section testId="art-section">
-        <Card zIndex={5}></Card>
+        <Card></Card>
       </Section>
     </Container>
   );

@@ -139,7 +139,7 @@ export default function Contact() {
 
   return (
     <Section testId="contact-section">
-      <Card zIndex={5}>
+      <Card testId="contact-card">
         <Container>
           <Heading>Contact Me!</Heading>
           <LabeledElement
