@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
 import { CSSTransition } from "react-transition-group";
 
-import { device, locations } from "../../constants";
+import { device } from "../../constants";
 import { colors } from "../constants";
 
 import { Tree1, Tree2, Tree3 } from "../../assets";
@@ -47,8 +47,12 @@ const GroundEllipse = styled.div`
 const SkyFill = styled.div`
   width: 100%;
   flex: 1;
-  background: ${colors.mediumBlue};
-  position
+  background: radial-gradient(
+    ellipse at 50% 5%,
+    #ede49f 0%,
+    #ede49f 50%,
+    #c86929 90%
+  );
 `;
 
 const TreesLeftContainer = styled.div`
@@ -109,7 +113,7 @@ const MobileFoxArt = styled(fox)`
   max-height: 150px;
 `;
 
-export default function Background({ location }) {
+export default function Background() {
   const [foxOffset, setFoxOffset] = useState([0, 0]);
   const [mobileFoxOffset, setMobileFoxOffset] = useState([0, 0]);
 
@@ -137,7 +141,7 @@ export default function Background({ location }) {
     <BackgroundContainer testId="background-container">
       <GroundContainer testId="ground-container">
         <GroundEllipse testId="ground-elipse" />
-        <SkyFill testId="ground-rectangle-fill" />
+        <SkyFill testId="sky-rectangle-fill" />
       </GroundContainer>
       <CSSTransition>
         <>
@@ -162,13 +166,11 @@ export default function Background({ location }) {
               testId="middle-tree-left"
               ref={foxTreeRef}
             />
-            {location.pathname === locations.INDEX && (
-              <FoxArt
-                test-id="fox-art"
-                offsetX={foxOffset[0]}
-                offsetY={foxOffset[1]}
-              />
-            )}
+            <FoxArt
+              test-id="fox-art"
+              offsetX={foxOffset[0]}
+              offsetY={foxOffset[1]}
+            />
             <Tree1
               fillColor={colors.furthestTree}
               zIndex={1}

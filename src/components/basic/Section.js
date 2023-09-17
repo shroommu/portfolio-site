@@ -3,7 +3,6 @@ import { device } from "../../constants";
 
 const Container = styled.div`
   display: flex;
-  min-height: 500px;
   flex: 1;
   padding: ${(p) => p.padding};
   margin: ${(p) => p.margin};
@@ -21,4 +20,7 @@ export default function Section({ testId, children, margin, padding }) {
   );
 }
 
-Section.defaultProps = { padding: "64px 200px 0", margin: "0 0 24px 0" };
+Section.defaultProps = {
+  padding: "64px 200px 0 350px",
+  margin: "0 0 36px 0",
+};

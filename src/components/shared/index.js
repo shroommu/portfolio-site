@@ -9,7 +9,18 @@ export const PageContainer = styled.div`
   height: calc(100% + ${footerHeight}px);
   width: 100%;
   background: ${colors.darkBlue};
-  position: relative;
+  position: absolute;
+  overflow: hidden;
+`;
+
+export const ContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: ${colors.darkBlue};
+  overflow: scroll;
+  margin-top: -50px;
+  padding-top: 50px;
 `;
 
 export const Heading = styled.h1`

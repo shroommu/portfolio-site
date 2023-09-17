@@ -14,7 +14,7 @@ import Footer from "./components/shared/Footer.js";
 import Background from "./components/shared/Background.js";
 
 import "./global.css";
-import { PageContainer } from "./components/shared/index.js";
+import { ContentContainer, PageContainer } from "./components/shared/index.js";
 import useBlogRoutes from "./components/blog/routes.js";
 import BlogPost from "./components/blog/BlogPost.js";
 
@@ -36,19 +36,21 @@ function App() {
       <PageContainer>
         <Header location={location} />
         <Background location={location} />
-        <Routes>
-          <Route path="/" index element={<Home />} />
-          <Route path="/code/" element={<Code />} />
-          <Route path="/art/" element={<Art />} />
-          <Route path="/blog/" element={<Blog />} />
-          <Route
-            path="/blog/post/"
-            element={<BlogPost />}
-            children={blogRoutes}
-          />
-          <Route path="/contact/" element={<Contact />} />
-        </Routes>
-        <Footer />
+        <ContentContainer>
+          <Routes>
+            <Route path="/" index element={<Home />} />
+            <Route path="/code/" element={<Code />} />
+            <Route path="/art/" element={<Art />} />
+            <Route path="/blog/" element={<Blog />} />
+            <Route
+              path="/blog/post/"
+              element={<BlogPost />}
+              children={blogRoutes}
+            />
+            <Route path="/contact/" element={<Contact />} />
+          </Routes>
+          <Footer />
+        </ContentContainer>
       </PageContainer>
     </React.StrictMode>
   );

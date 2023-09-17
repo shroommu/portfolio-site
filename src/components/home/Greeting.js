@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
+import Card from "../basic/Card";
+import Section from "../basic/Section";
+
 import { Heading as StyleableHeading } from "../shared";
 import { device } from "../../constants";
 import { colors } from "../constants";
@@ -75,25 +78,32 @@ const ProfilePicture = styled.img`
 
 export default function Greeting() {
   return (
-    <Container test-id="greeting-container">
-      <ProfilePictureContainer>
-        <ProfilePicture src={pfp} test-id="profile-picture" />
-      </ProfilePictureContainer>
-      <TextContainer test-id="greeting-text-container">
-        <Heading>Hi, I'm Alexa!</Heading>
-        <SubHeading>Software Developer, Artist, Pokemon Enthusiast</SubHeading>
-        <Paragraph>
-          I'm a curious person who loves to create and learn. You'll find me
-          anywhere that code and art interact, plus a few other places besides.
-          Keep scrolling to see what I'm working on!
-        </Paragraph>
-        <Paragraph>
-          I'm local to the Seattle area, where I live with one person and two
-          cats. When I'm not coding, writing, or otherwise creating, I like to
-          play video games (especially Pokemon Go) and try new restaurants.
-        </Paragraph>
-        <Paragraph>Thanks for visiting my site!</Paragraph>
-      </TextContainer>
-    </Container>
+    <Section testId="landing-section">
+      <Card zIndex={4}>
+        <Container test-id="greeting-container">
+          <ProfilePictureContainer>
+            <ProfilePicture src={pfp} test-id="profile-picture" />
+          </ProfilePictureContainer>
+          <TextContainer test-id="greeting-text-container">
+            <Heading>Hi, I'm Alexa!</Heading>
+            <SubHeading>
+              Software Developer, Artist, Pokemon Enthusiast
+            </SubHeading>
+            <Paragraph>
+              I'm a curious person who loves to create and learn. You'll find me
+              anywhere that code and art interact, plus a few other places
+              besides. Keep scrolling to see what I'm working on!
+            </Paragraph>
+            <Paragraph>
+              I'm local to the Seattle area, where I live with one person and
+              two cats. When I'm not coding, writing, or otherwise creating, I
+              like to play video games (especially Pokemon Go) and try new
+              restaurants.
+            </Paragraph>
+            <Paragraph>Thanks for visiting my site!</Paragraph>
+          </TextContainer>
+        </Container>
+      </Card>
+    </Section>
   );
 }
