@@ -15,9 +15,10 @@ const Container = styled.div`
 
 const ContentContainer = styled.div`
   display: flex;
+  width: 100%;
   flex-wrap: wrap;
   flex: 1;
-  justify-content: center;
+  justify-content: space-evenly;
 `;
 
 export default function Blog() {

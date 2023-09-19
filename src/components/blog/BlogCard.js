@@ -7,8 +7,9 @@ import { colors } from "../constants";
 const Card = styled(UnstyledCard)`
   border: 2px solid ${colors.lightestBlue};
   box-shadow: 10px 10px 5px -2px ${colors.lightBlue};
-  margin: 12px 0;
+  margin: 0 0 12px 0;
   padding: 24px;
+  max-width: 300px;
 
   &:hover {
     transform: translate(0, -10px) rotate(2deg);
@@ -67,7 +68,7 @@ const TagContainer = styled.div`
 
 const Tag = styled.div`
   font-family: Bitter;
-  margin: 0 0 0 12px;
+  margin: 0 0 12px 12px;
   padding: 8px 16px;
   border-radius: 20px;
   background-color: ${colors.orange};
@@ -76,7 +77,7 @@ const Tag = styled.div`
 
 const ReadMoreLink = styled.div`
   font-family: Bitter;
-  margin: 0 0 12px auto;
+  margin: 0 0 0 auto;
   text-decoration: underline;
 `;
 
@@ -93,12 +94,12 @@ export default function BlogCard({ postMetaData }) {
           <TextContainer>
             <Title>{title}</Title>
             <Excerpt>{excerpt}</Excerpt>
-            <ReadMoreLink>Read More →</ReadMoreLink>
             <TagContainer>
               {tags.map((tag) => {
                 return <Tag>{tag}</Tag>;
               })}
             </TagContainer>
+            <ReadMoreLink>Read More →</ReadMoreLink>
           </TextContainer>
         </Container>
       </Link>
