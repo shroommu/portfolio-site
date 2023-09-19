@@ -31,6 +31,7 @@ async function getArticleFromSlug(slugs) {
       slug: data.slug,
       excerpt: data.excerpt,
       title: data.title,
+      image: data.image,
       date: data.date,
     };
 

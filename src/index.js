@@ -14,11 +14,7 @@ import Footer from "./components/shared/Footer.js";
 import Background from "./components/shared/Background.js";
 
 import "./global.css";
-import {
-  ContentContainer,
-  MobileBackground,
-  PageContainer,
-} from "./components/shared/index.js";
+import { ContentContainer, PageContainer } from "./components/shared/index.js";
 import useBlogRoutes from "./components/blog/routes.js";
 import BlogPost from "./components/blog/BlogPost.js";
 

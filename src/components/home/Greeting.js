@@ -20,7 +20,7 @@ const Container = styled.div`
 `;
 
 const TextContainer = styled.div`
-  flex: 1;
+  flex: 2;
   margin-right: 24px;
 
   @media ${device.mobile} {

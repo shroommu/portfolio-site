@@ -16,6 +16,12 @@ const Container = styled.div`
   flex-direction: column;
 `;
 
+const Image = styled.image`
+  max-width: 100%;
+  max-height: 100%;
+  height: 100px;
+`;
+
 const Title = styled.h1`
   font-family: Delicious Handrawn;
   color: ${colors.darkestBlue};
@@ -32,12 +38,15 @@ const Excerpt = styled.div`
 `;
 
 export default function BlogCard({ postMetaData }) {
-  const { slug, excerpt, title } = postMetaData;
+  const { slug, excerpt, title, image } = postMetaData;
+
+  console.log(image);
 
   return (
     <Link to={`/blog/post${slug}`}>
       <Card>
         <Container>
+          <Image src={image} />
           <Title>{title}</Title>
           <Excerpt>{excerpt}</Excerpt>
         </Container>

@@ -17,6 +17,7 @@ const ContentContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex: 1;
+  justify-content: center;
 `;
 
 export default function Blog() {
