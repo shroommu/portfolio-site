@@ -9,12 +9,10 @@ const Container = styled.div`
 
 const BaseLabel = styled.label`
   padding: 0 0 8px 0;
-  font-family: Bitter;
 `;
 
 const BaseError = styled.div`
   padding-top: 4px;
-  font-family: Bitter;
   font-size: 10px;
   color: red;
 `;

@@ -47,8 +47,6 @@ const SubHeading = styled.h2`
 
 const Paragraph = styled.p`
   display: block;
-  font-family: Bitter;
-  color: ${colors.darkestBlue};
   margin-bottom: 12px;
   text-align: justify;
 

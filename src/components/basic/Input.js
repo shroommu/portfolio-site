@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const BaseInput = styled.input`
   padding: 2px;
-  font-family: Bitter;
 `;
 
 export default function Input({ value, onChange, className }) {

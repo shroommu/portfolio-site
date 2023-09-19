@@ -17,7 +17,6 @@ const Container = styled.div`
 `;
 
 const CopyrightContainer = styled.div`
-  font-family: Bitter;
   color: ${colors.white};
   margin-top: 8px;
 `;

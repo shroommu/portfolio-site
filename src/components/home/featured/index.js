@@ -32,7 +32,6 @@ const ContentImg = styled.img`
 `;
 
 const ContentTitle = styled.div`
-  font-family: Bitter;
   text-align: center;
 `;
 

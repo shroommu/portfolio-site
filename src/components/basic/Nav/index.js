@@ -20,7 +20,6 @@ export default function Nav({ location }) {
         <Button
           margin="0 8px 0 0"
           fontSize="24px"
-          fontFamily={"Delicious Handrawn"}
           theme={
             location.pathname === locations.INDEX
               ? themes.secondary
@@ -34,7 +33,6 @@ export default function Nav({ location }) {
         <Button
           margin="0 8px 0 0"
           fontSize="24px"
-          fontFamily={"Delicious Handrawn"}
           theme={
             location.pathname === locations.ART
               ? themes.secondary
@@ -48,7 +46,6 @@ export default function Nav({ location }) {
         <Button
           margin="0 8px 0 0"
           fontSize="24px"
-          fontFamily={"Delicious Handrawn"}
           theme={
             location.pathname === locations.CODE
               ? themes.secondary
@@ -62,7 +59,6 @@ export default function Nav({ location }) {
         <Button
           margin="0 8px 0 0"
           fontSize="24px"
-          fontFamily={"Delicious Handrawn"}
           theme={
             location.pathname === locations.BLOG
               ? themes.secondary

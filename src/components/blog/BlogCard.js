@@ -56,7 +56,6 @@ const Title = styled.h1`
 `;
 
 const Excerpt = styled.p`
-  font-family: Bitter;
   text-align: justify;
   max-height: 100px;
   margin-bottom: 12px;
@@ -67,7 +66,6 @@ const TagContainer = styled.div`
 `;
 
 const Tag = styled.div`
-  font-family: Bitter;
   margin: 0 0 12px 12px;
   padding: 8px 16px;
   border-radius: 20px;
@@ -76,7 +74,6 @@ const Tag = styled.div`
 `;
 
 const ReadMoreLink = styled.div`
-  font-family: Bitter;
   margin: 0 0 0 auto;
   text-decoration: underline;
 `;

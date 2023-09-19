@@ -20,7 +20,6 @@ export const Header2 = styled.h2`
 `;
 
 export const Paragraph = styled.p`
-  font-family: Bitter;
   text-align: justify;
   margin-bottom: 12px;
 `;

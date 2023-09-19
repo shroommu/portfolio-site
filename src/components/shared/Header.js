@@ -118,12 +118,7 @@ export default function Header({ location }) {
         <Nav location={location} />
         <SocialsContainer>
           <Link to={locations.CONTACT}>
-            <Button
-              margin="0 16px 0 0"
-              fontSize="24px"
-              fontFamily={"Delicious Handrawn"}
-              theme={themes.tertiary}
-            >
+            <Button margin="0 16px 0 0" fontSize="24px" theme={themes.tertiary}>
               Contact
             </Button>
           </Link>

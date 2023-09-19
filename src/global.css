@@ -13,11 +13,14 @@ html, body {
     margin: 0;
 }
 
-/* a {
-    text-decoration: none;
-    color: currentColor;
-} */
+div, p, input, textarea, label {
+    font-family: Bitter;
+}
 
 button, p, a {
     all: unset;
+}
+
+p {
+    display: block;
 }

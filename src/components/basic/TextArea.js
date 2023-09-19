@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const BaseInput = styled.textarea`
   padding: 2px;
-  font-family: Bitter;
   max-height: 300px;
   min-height: 100px;
   resize: vertical;
