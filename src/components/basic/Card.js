@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import { colors } from "../constants";
+import { device } from "../../constants";
 
 const Container = styled.div`
   display: flex;
@@ -10,6 +11,10 @@ const Container = styled.div`
   border-radius: ${(p) => p.borderRadius};
   z-index: ${(p) => p.zIndex};
   padding: ${(p) => p.padding};
+
+  @media ${device.tablet} {
+    padding: ${(p) => p.mobilePadding};
+  }
 `;
 
 export default function Card({
@@ -17,6 +22,7 @@ export default function Card({
   borderRadius,
   zIndex,
   padding,
+  mobilePadding,
   testId,
   children,
   className,
@@ -26,6 +32,7 @@ export default function Card({
       background={background}
       borderRadius={borderRadius}
       padding={padding}
+      mobilePadding={mobilePadding}
       test-id={testId}
       zIndex={zIndex}
       className={className}
@@ -40,4 +47,5 @@ Card.defaultProps = {
   borderRadius: "30px",
   zIndex: 30,
   padding: "36px",
+  mobilePadding: "24px",
 };

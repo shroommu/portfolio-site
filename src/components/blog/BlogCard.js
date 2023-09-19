@@ -3,13 +3,14 @@ import { Link } from "react-router-dom";
 
 import UnstyledCard from "../basic/Card";
 import { colors } from "../constants";
+import { device } from "../../constants";
 
 const Card = styled(UnstyledCard)`
   border: 2px solid ${colors.lightestBlue};
   box-shadow: 10px 10px 5px -2px ${colors.lightBlue};
   margin: 0 0 12px 0;
   padding: 24px;
-  max-width: 300px;
+  max-width: 25%;
 
   &:hover {
     transform: translate(0, -10px) rotate(2deg);
@@ -57,12 +58,18 @@ const Title = styled.h1`
 
 const Excerpt = styled.p`
   text-align: justify;
-  max-height: 100px;
   margin-bottom: 12px;
 `;
 
 const TagContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
+
+  @media ${device.tablet} {
+    //flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const Tag = styled.div`
@@ -71,6 +78,11 @@ const Tag = styled.div`
   border-radius: 20px;
   background-color: ${colors.orange};
   color: ${colors.white};
+  width: fit-content;
+
+  @media ${device.tablet} {
+    font-size: 12px;
+  }
 `;
 
 const ReadMoreLink = styled.div`

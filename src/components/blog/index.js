@@ -5,6 +5,7 @@ import { Heading } from "../shared";
 
 import blogMetadata from "../../data/blogMetadata.json";
 import BlogCard from "./BlogCard";
+import { device } from "../../constants";
 
 const Container = styled.div`
   display: flex;
@@ -19,6 +20,11 @@ const ContentContainer = styled.div`
   flex-wrap: wrap;
   flex: 1;
   justify-content: space-evenly;
+
+  @media ${device.laptop} {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export default function Blog() {
