@@ -9,13 +9,15 @@ const Container = styled.div`
   background: ${(p) => p.background};
   border-radius: ${(p) => p.borderRadius};
   z-index: ${(p) => p.zIndex};
-  padding: 24px;
+  padding: ${(p) => p.padding};
 `;
 
 export default function Card({
   background,
   borderRadius,
   zIndex,
+  padding,
+  testId,
   children,
   className,
 }) {
@@ -23,6 +25,8 @@ export default function Card({
     <Container
       background={background}
       borderRadius={borderRadius}
+      padding={padding}
+      test-id={testId}
       zIndex={zIndex}
       className={className}
     >
@@ -35,4 +39,5 @@ Card.defaultProps = {
   background: colors.white,
   borderRadius: "30px",
   zIndex: 30,
+  padding: "36px",
 };

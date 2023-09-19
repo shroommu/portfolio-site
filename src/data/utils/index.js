@@ -33,6 +33,7 @@ async function getArticleFromSlug(slugs) {
       title: data.title,
       image: data.image,
       date: data.date,
+      tags: data.tags,
     };
 
     allArticleMetadata.push(metadata);

@@ -25,10 +25,6 @@ const FlexLabeledElement = styled(LabeledElement)`
   flex: 1;
 `;
 
-const FlexTextArea = styled(TextArea)`
-  flex: 1;
-`;
-
 export default function Contact() {
   const [name, setName] = useState("");
   const [errors, setErrors] = useState({ name: "", email: "", message: "" });
@@ -164,7 +160,7 @@ export default function Contact() {
             error={errors.message}
             width={"66%"}
           >
-            <FlexTextArea
+            <TextArea
               value={message}
               onChange={(value) => validateMessage(value)}
             />

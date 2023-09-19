@@ -7,50 +7,90 @@ import { colors } from "../constants";
 const Card = styled(UnstyledCard)`
   border: 2px solid ${colors.lightestBlue};
   box-shadow: 10px 10px 5px -2px ${colors.lightBlue};
-  margin: 12px;
+  margin: 12px 0;
+  padding: 24px;
 `;
 
 const Container = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  height: 100%;
 `;
 
-const Image = styled.image`
+const ImageContainer = styled.div`
+  max-height: 50%;
+  display: flex;
+  max-width: 100%;
+  margin-bottom: 12px;
+`;
+
+const Image = styled.img`
   max-width: 100%;
   max-height: 100%;
-  height: 100px;
+  margin: auto;
+`;
+
+const TextContainer = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 const Title = styled.h1`
+  all: unset;
+  font-weight: bold;
   font-family: Delicious Handrawn;
   color: ${colors.darkestBlue};
   font-size: 32px;
   text-align: center;
-  max-width: 200px;
-  margin-top: 0;
+  margin-bottom: 12px;
 `;
 
-const Excerpt = styled.div`
+const Excerpt = styled.p`
   font-family: Bitter;
   text-align: justify;
-  max-width: 200px;
+  max-height: 100px;
+  margin-bottom: 12px;
+`;
+
+const TagContainer = styled.div`
+  display: flex;
+`;
+
+const Tag = styled.div`
+  font-family: Bitter;
+  margin: 0 0 0 12px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background-color: ${colors.orange};
+  color: ${colors.white};
 `;
 
 export default function BlogCard({ postMetaData }) {
-  const { slug, excerpt, title, image } = postMetaData;
-
-  console.log(image);
+  const { slug, excerpt, title, image, tags } = postMetaData;
 
   return (
-    <Link to={`/blog/post${slug}`}>
-      <Card>
+    <Card>
+      <Link to={`/blog/post${slug}`}>
         <Container>
-          <Image src={image} />
-          <Title>{title}</Title>
-          <Excerpt>{excerpt}</Excerpt>
+          <ImageContainer>
+            <Image src={image} />
+          </ImageContainer>
+          <TextContainer>
+            <Title>{title}</Title>
+            <Excerpt>{excerpt}</Excerpt>
+            <TagContainer>
+              {tags.map((tag) => {
+                return <Tag>{tag}</Tag>;
+              })}
+            </TagContainer>
+          </TextContainer>
         </Container>
-      </Card>
-    </Link>
+      </Link>
+    </Card>
   );
 }

@@ -8,6 +8,7 @@ export const Header1 = styled.h1`
   margin: 0 0 6px 0;
   font-size: 36px;
   text-align: center;
+  margin-bottom: 24px;
 `;
 
 export const Header2 = styled.h2`
@@ -21,6 +22,7 @@ export const Header2 = styled.h2`
 export const Paragraph = styled.p`
   font-family: Bitter;
   text-align: justify;
+  margin-bottom: 12px;
 `;
 
 export const Image = styled.img`

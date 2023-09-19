@@ -13,11 +13,11 @@ html, body {
     margin: 0;
 }
 
-a {
+/* a {
     text-decoration: none;
     color: currentColor;
-}
+} */
 
-button {
+button, p, a {
     all: unset;
 }

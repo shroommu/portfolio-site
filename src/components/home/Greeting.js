@@ -37,7 +37,7 @@ const Heading = styled(StyleableHeading)`
 const SubHeading = styled.h2`
   font-family: Delicious Handrawn;
   color: ${colors.darkBlue};
-  margin: 0;
+  margin: 0 0 18px 0;
   font-size: 24px;
 
   @media ${device.mobile} {
@@ -46,8 +46,11 @@ const SubHeading = styled.h2`
 `;
 
 const Paragraph = styled.p`
+  display: block;
   font-family: Bitter;
   color: ${colors.darkestBlue};
+  margin-bottom: 12px;
+  text-align: justify;
 
   @media ${device.mobile} {
     text-align: center;
